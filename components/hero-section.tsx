@@ -18,7 +18,7 @@ const features = [
 
 export function HeroSection({ onDiscover }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-10 md:pt-14">
       {/* Deep blue gradient background */}
       <div 
         className="absolute inset-0"
