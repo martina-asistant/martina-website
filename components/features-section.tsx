@@ -24,7 +24,7 @@ const features = [
   {
     icon: Bell,
     title: "Enviar recordatorios",
-    description: "Recordatorios automáticos que reducen las ausencias y mejoran la puntualidad."
+    description: "Recordatorios automáticos de citas que reducen las ausencias y mejoran la puntualidad."
   },
   {
     icon: HelpCircle,
@@ -34,7 +34,7 @@ const features = [
   {
     icon: Bot,
     title: "Automatizar atención",
-    description: "Atención al cliente 24/7 sin necesidad de estar presente constantemente."
+    description: "Atención al cliente 24/7 sin necesidad de estar presente constantemente del móvil."
   }
 ]
 
@@ -60,11 +60,11 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+          <span className="text-[#00dcff] text-sm font-medium tracking-wider uppercase mb-4 block">
             Capacidades
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight mb-6 text-balance">
-            Qué puede hacer Martina
+            ¿Qué puede hacer Martina?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
             Una asistente virtual diseñada para transformar la forma en que gestionas tu negocio.
