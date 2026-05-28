@@ -89,12 +89,12 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
             />
             
             {/* Avatar image */}
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-transparent">
               <Image
                 src="/images/martina-hero-halo.png"
                 alt="Martina - Tu asistente virtual inteligente"
                 fill
-                className="object-cover object-top scale-[1.15]"
+                className="object-contain scale-[1.08]"
                 priority
               />
             </div>
