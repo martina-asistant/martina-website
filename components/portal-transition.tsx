@@ -30,9 +30,13 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
 
   if (phase === "idle") return null
 
-  if (phase === "complete") {
-    return <>{children}</>
+ if (phase === "complete") {
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0, behavior: "instant" })
   }
+
+  return <>{children}</>
+}
 
   return (
     <AnimatePresence>
