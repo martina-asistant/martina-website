@@ -22,12 +22,12 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
 
     const revealTimer = setTimeout(() => {
       setPhase("revealing")
-    }, 1900)
+    }, 1400)
 
     const completeTimer = setTimeout(() => {
       setPhase("complete")
       onComplete()
-    }, 3200)
+    }, 2200)
 
     return () => {
       clearTimeout(revealTimer)
@@ -69,7 +69,7 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
             scale: phase === "opening" ? [0.82, 1.18, 0.96, 1.08] : 1.28,
             opacity: phase === "opening" ? [0, 1, 0.75, 0.95] : 0,
           }}
-          transition={{ duration: 2.4, ease: "easeInOut" }}
+          transition={{ duration: 1.4, ease: "easeInOut" }}
         />
 
         <motion.div
@@ -79,7 +79,7 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
             scale: phase === "opening" ? [0.7, 1.35, 0.9, 1.2] : 1.7,
             opacity: phase === "opening" ? [0, 0.8, 0.45, 0.65] : 0,
           }}
-          transition={{ duration: 2.4, ease: "easeInOut" }}
+          transition={{ duration: 1.4, ease: "easeInOut" }}
         />
 
         <div className="absolute inset-0 pointer-events-none">
@@ -99,7 +99,7 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
                 y: phase === "opening" ? [-6, 5, -3] : 0,
               }}
               transition={{
-                duration: 1.8,
+                duration: 1.5,
                 delay: index * 0.02,
                 ease: "easeInOut",
               }}
@@ -114,7 +114,7 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
             opacity: phase === "opening" ? 1 : 0,
             y: phase === "opening" ? 0 : -8,
           }}
-          transition={{ duration: 0.75, ease: "easeOut" }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
         >
           <p className="text-sm font-medium uppercase tracking-[0.35em] text-[#00dcff]">
             Cargando Martina
@@ -144,7 +144,7 @@ export function PortalTransition({ isActive, onComplete, children }: PortalTrans
             scale: phase === "revealing" ? 1 : 1.015,
             filter: phase === "revealing" ? "blur(0px)" : "blur(10px)",
           }}
-          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {children}
         </motion.div>
