@@ -94,7 +94,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
                 src="/images/martina-avatar.png"
                 alt="Martina - Tu asistente virtual inteligente"
                 fill
-                className="object-cover object-top scale-[1.22] translate-y-3"
+                className="object-cover object-top scale-[1.15]"
                 priority
               />
             </div>
