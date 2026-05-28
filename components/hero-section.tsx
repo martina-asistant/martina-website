@@ -166,7 +166,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
         >
           <button
             onClick={onDiscover}
-           className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_55px_rgba(0,220,255,0.85)] hover:scale-105 border border-cyan-300/70 shadow-[0_0_28px_rgba(0,220,255,0.45)]"
+           className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_55px_rgba(0,220,255,0.85)] hover:scale-105 border border-cyan-200 shadow-[0_0_28px_rgba(0,220,255,0.45)]"
             style={{
               boxShadow: '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
             }}
