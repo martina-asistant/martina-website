@@ -5,12 +5,14 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const messages = [
-  { type: 'user', text: "Hola, ¿tienen disponibilidad mañana a las 10?" },
-  { type: 'martina', text: "¡Hola! Sí, tenemos disponibilidad mañana a las 10:00. ¿Te gustaría reservar esa hora?" },
+  { type: 'user', text: "Hola, ¿tienen disponibilidad mañana a las 10h?" },
+  { type: 'martina', text: "¡Buenos días Ana 😊! Cuentame, ¿cual es el motivo de la cita?" },
+  { type: 'user', text: "Me duele mucho una muela desde hace dos días" },
+  { type: 'martina', text: "¡Vale, no te preocupes tenemos un hueco mañana a las 10:30h. ¿Te va bien?" },
   { type: 'user', text: "Sí, por favor" },
-  { type: 'martina', text: "¡Perfecto! He reservado tu cita para mañana a las 10:00. Te enviaré un recordatorio 1 hora antes. ¿Necesitas algo más?" },
+  { type: 'martina', text: "¡Perfecto! He reservado tu cita para mañana a las 10:30h 🦷. Te enviaré un recordatorio 1 hora antes. ¿Necesitas algo más?" },
   { type: 'user', text: "No, eso es todo. Gracias!" },
-  { type: 'martina', text: "¡Excelente! Nos vemos mañana. Que tengas un gran día" },
+  { type: 'martina', text: "¡Perfecto! Nos vemos mañana. ¡Que tengas un buen día!💙" },
 ]
 
 export function DemoSection() {
