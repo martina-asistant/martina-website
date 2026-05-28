@@ -119,35 +119,35 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
         </motion.div>
 
         {/* Headline */}
-        <motion.h1
-          className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-3"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
-          Hola, soy{' '}
-          <span className="text-primary">Martina</span>
-          <span className="ml-2 inline-block">
-            <motion.span
-              animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
-              transition={{ duration: 2, delay: 1, repeat: Infinity, repeatDelay: 3 }}
-              className="inline-block origin-bottom-right"
-            >
-              &#128075;
-            </motion.span>
-          </span>
-        </motion.h1>
+<motion.h1
+  className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-3"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.8 }}
+>
+  Hola, soy{' '}
+  <span className="text-[#66ffea]">Martina</span>
+  <span className="ml-2 inline-block">
+    <motion.span
+      animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
+      transition={{ duration: 2, delay: 1, repeat: Infinity, repeatDelay: 3 }}
+      className="inline-block origin-bottom-right"
+    >
+      &#128075;
+    </motion.span>
+  </span>
+</motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          className="text-lg md:text-xl text-primary font-medium mb-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          Tu asistente virtual inteligente.
-        </motion.p>
-
+{/* Subtitle */}
+<motion.p
+  className="text-lg md:text-xl text-[#66ffea] font-medium mb-2"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5, duration: 0.8 }}
+>
+  Tu asistente virtual inteligente.
+</motion.p>
+        
         <motion.p
           className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed text-pretty mb-8"
           initial={{ opacity: 0, y: 20 }}
