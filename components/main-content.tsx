@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
 import { ParticleField } from './particle-field'
 import { AboutSection } from './about-section'
 import { FeaturesSection } from './features-section'
@@ -27,7 +28,7 @@ export function MainContent() {
             <span className="text-muted-foreground font-normal ml-1">Assistant</span>
           </span>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-3">
             {[
               { label: "Qué es", href: "#about" },
               { label: "Funciones", href: "#features" },
@@ -37,7 +38,7 @@ export function MainContent() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground border border-transparent rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.18)] hover:bg-background/20"
               >
                 {link.label}
               </a>
@@ -45,11 +46,12 @@ export function MainContent() {
           </div>
 
           <button
-  onClick={() => window.location.href = "/"}
-  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border/50 rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.15)]"
->
-  Volver
-</button>
+            onClick={() => window.location.href = "/"}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border/50 rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.18)]"
+          >
+            <ArrowLeft className="w-4 h-4 text-primary" strokeWidth={2} />
+            Volver
+          </button>
         </div>
       </motion.nav>
 
