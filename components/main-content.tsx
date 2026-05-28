@@ -24,7 +24,7 @@ export function MainContent() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-lg font-semibold tracking-tight">
-            <span className="text-primary">Martina</span>
+            <span className="text-[#00dcff]">Martina</span>
             <span className="text-muted-foreground font-normal ml-1">Assistant</span>
           </span>
 
@@ -38,7 +38,7 @@ export function MainContent() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground border border-transparent rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.18)] hover:bg-background/20"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground border border-transparent rounded-full transition-all duration-300 hover:border-[#00dcff]/50 hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]] hover:bg-background/20"
               >
                 {link.label}
               </a>
@@ -47,9 +47,9 @@ export function MainContent() {
 
           <button
             onClick={() => window.location.href = "/"}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border/50 rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.18)]"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border/50 rounded-full transition-all duration-300 hover:border-[#00dcff]/50 hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
           >
-            <ArrowLeft className="w-4 h-4 text-primary" strokeWidth={2} />
+            <ArrowLeft className="w-4 h-4 text-[#00dcff]" strokeWidth={2} />
             Volver
           </button>
         </div>
