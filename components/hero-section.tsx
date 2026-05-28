@@ -41,11 +41,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        <button
-          className="px-5 py-2.5 text-sm font-medium text-foreground/80 hover:text-foreground border border-border/40 rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,220,255,0.15)] backdrop-blur-sm bg-background/10"
-        >
-          Panel
-        </button>
+       
       </motion.div>
 
       {/* Main content */}
