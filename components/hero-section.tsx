@@ -168,7 +168,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
             onClick={onDiscover}
            className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_70px_rgba(0,220,255,0.95)] hover:scale-105 border border-cyan-200 shadow-[0_0_28px_rgba(0,220,255,0.45)]"
             style={{
-              boxShadow: '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
+              boxShadow: '0 0 25px rgba(0, 220, 255, 0.95), 0 0 70px rgba(0, 220, 255, 0.65), inset 0 0 0 1px rgba(0, 220, 255, 0.8)',
             }}
           >
             <span className="relative z-10">DESCUBRIR A MARTINA</span>
