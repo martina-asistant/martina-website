@@ -126,7 +126,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
   transition={{ delay: 0.4, duration: 0.8 }}
 >
   Hola, soy{' '}
-  <span className="text-[#66ffea]">Martina</span>
+  <span className="text-[#00dcff]">Martina</span>
   <span className="ml-2 inline-block">
     <motion.span
       animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
@@ -140,7 +140,7 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
 
 {/* Subtitle */}
 <motion.p
-  className="text-lg md:text-xl text-[#66ffea] font-medium mb-2"
+  className="text-lg md:text-xl text-[#00dcff] font-medium mb-2"
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5, duration: 0.8 }}
