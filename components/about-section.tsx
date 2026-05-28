@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
+    <section id="about" className="relative pt-10 pb-24 md:pt-14 md:pb-32">
       {/* Ambient background */}
       <div 
         className="absolute inset-0 -z-10"
