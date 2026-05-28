@@ -189,13 +189,13 @@ export function HeroSection({ onDiscover }: HeroSectionProps) {
 
       {/* Bottom feature bar */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20"
+        className="relative z-20 mt-12 w-full"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
       >
         <div 
-          className="mx-4 mb-6 md:mx-auto md:max-w-3xl rounded-2xl backdrop-blur-md border border-border/40"
+          className="mx-4 mb-10 md:mx-auto md:max-w-5xl rounded-2xl backdrop-blur-md border border-border/40"
           style={{
             background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%)',
             boxShadow: '0 -10px 40px rgba(0, 0, 0, 0.3)',
