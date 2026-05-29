@@ -38,9 +38,9 @@ export function AboutSection() {
 
               {/* Static halo with breathing glow */}
               <motion.div
-                className="absolute inset-14 rounded-full"
+               className="absolute inset-[18px] rounded-full"
                 style={{
-                  border: '1.5px solid rgba(0, 220, 255, 0.55)',
+                 border: '2.5px solid rgba(0, 220, 255, 0.75)',
                 }}
                 animate={{
                   boxShadow: [
@@ -50,8 +50,8 @@ export function AboutSection() {
                       inset 0 0 25px rgba(0, 220, 255, 0.05)
                     `,
                     `
-                      0 0 55px rgba(0, 220, 255, 0.40),
-                      0 0 120px rgba(0, 220, 255, 0.18),
+                      0 0 70px rgba(0, 220, 255, 0.55),
+                      0 0 140px rgba(0, 220, 255, 0.28),
                       inset 0 0 40px rgba(0, 220, 255, 0.10)
                     `,
                     `
