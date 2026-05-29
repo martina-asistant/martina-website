@@ -7,7 +7,7 @@ export function AboutSection() {
   return (
     <section id="about" className="relative pt-10 pb-24 md:pt-12 md:pb-32">
       {/* Ambient background */}
-      <div 
+      <div
         className="absolute inset-0 -z-10"
         style={{
           background: `
@@ -19,7 +19,7 @@ export function AboutSection() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left visual - Avatar floating with single halo */}
+          {/* Left visual - Avatar with subtle breathing glow */}
           <motion.div
             className="relative order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
@@ -27,37 +27,45 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div
-              className="relative aspect-square max-w-md mx-auto"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <div className="relative aspect-square max-w-md mx-auto">
               {/* Soft ambient glow */}
-              <motion.div 
+              <div
                 className="absolute inset-8 rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.18) 0%, transparent 62%)'
+                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.16) 0%, transparent 62%)'
                 }}
-                animate={{ opacity: [0.55, 0.9, 0.55], scale: [1, 1.04, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              {/* Single elegant halo */}
+              {/* Static halo with breathing glow */}
               <motion.div
                 className="absolute inset-14 rounded-full"
                 style={{
                   border: '1.5px solid rgba(0, 220, 255, 0.55)',
-                  boxShadow: `
-                    0 0 35px rgba(0, 220, 255, 0.28),
-                    0 0 90px rgba(0, 220, 255, 0.12),
-                    inset 0 0 35px rgba(0, 220, 255, 0.08)
-                  `,
                 }}
                 animate={{
-                  scale: [1, 1.035, 1],
-                  opacity: [0.75, 1, 0.75],
+                  boxShadow: [
+                    `
+                      0 0 25px rgba(0, 220, 255, 0.18),
+                      0 0 60px rgba(0, 220, 255, 0.08),
+                      inset 0 0 25px rgba(0, 220, 255, 0.05)
+                    `,
+                    `
+                      0 0 55px rgba(0, 220, 255, 0.40),
+                      0 0 120px rgba(0, 220, 255, 0.18),
+                      inset 0 0 40px rgba(0, 220, 255, 0.10)
+                    `,
+                    `
+                      0 0 25px rgba(0, 220, 255, 0.18),
+                      0 0 60px rgba(0, 220, 255, 0.08),
+                      inset 0 0 25px rgba(0, 220, 255, 0.05)
+                    `
+                  ],
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
 
               {/* Avatar */}
@@ -69,30 +77,7 @@ export function AboutSection() {
                   className="object-cover object-top scale-125"
                 />
               </div>
-
-              {/* Very subtle premium particles */}
-              {[0, 1, 2, 3].map((i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1.5 h-1.5 rounded-full bg-[#00dcff]/60"
-                  style={{
-                    left: `${50 + 38 * Math.cos((i * Math.PI) / 2)}%`,
-                    top: `${50 + 38 * Math.sin((i * Math.PI) / 2)}%`,
-                    boxShadow: '0 0 14px rgba(0, 220, 255, 0.55)',
-                  }}
-                  animate={{
-                    scale: [0.8, 1.35, 0.8],
-                    opacity: [0.25, 0.75, 0.25],
-                  }}
-                  transition={{
-                    duration: 3.4,
-                    delay: i * 0.45,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Right content */}
