@@ -103,18 +103,18 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-              Qué es Martina
+            <span className="text-[#00dcff] text-sm font-medium tracking-[0.35em] uppercase mb-4 block">
+              ¿Qué es Martina?
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight mb-6 text-balance">
               Tu asistente virtual inteligente
             </h2>
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-4 text-foreground/75 text-lg leading-relaxed">
               <p>
                 Martina es una asistente de inteligencia artificial diseñada específicamente para negocios que buscan optimizar su atención al cliente y gestión de citas.
               </p>
               <p>
-                Aprende de tu negocio, se adapta a tu estilo de comunicación y trabaja 24/7 para que puedas centrarte en lo que realmente importa: hacer crecer tu empresa.
+                Configurada exclusivamente para tu negocio, se adapta a tu estilo de comunicación y trabaja 24/7 para que puedas centrarte en lo que realmente importa: hacer crecer tu empresa.
               </p>
             </div>
 
@@ -127,13 +127,13 @@ export function AboutSection() {
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="relative p-4 rounded-xl bg-card/30 border border-border/30 backdrop-blur-sm"
+                  className="relative p-5 rounded-2xl bg-[#02141a]/70 border border-[#00dcff]/25 backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/60 hover:shadow-[0_0_35px_rgba(0,220,255,0.22)] hover:-translate-y-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
-                  <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">
+                  <className="text-2xl md:text-3xl font-semibold text-primary mb-1">
                     {stat.value}
                   </div>
                   <div className="text-xs text-muted-foreground">
