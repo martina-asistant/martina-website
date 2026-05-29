@@ -30,7 +30,7 @@ export function AboutSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               {/* Soft ambient glow */}
               <div
-                className="absolute inset-16 rounded-full"
+                className="absolute inset- rounded-full"
                 style={{
                   background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.16) 0%, transparent 62%)'
                 }}
@@ -38,7 +38,7 @@ export function AboutSection() {
 
               {/* Static halo with breathing glow */}
               <motion.div
-               className="absolute inset-[22px] rounded-full"
+               className="absolute inset-[26px] rounded-full"
                 style={{
                  border: '2.5px solid rgba(0, 220, 255, 0.75)',
                 }}
