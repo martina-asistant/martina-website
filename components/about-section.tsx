@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function AboutSection() {
   return (
-   <section id="about" className="relative pt-10 pb-24 md:pt-12 md:pb-32">
+    <section id="about" className="relative pt-10 pb-24 md:pt-12 md:pb-32">
       {/* Ambient background */}
       <div 
         className="absolute inset-0 -z-10"
@@ -19,7 +19,7 @@ export function AboutSection() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left visual - Avatar with glow */}
+          {/* Left visual - Avatar floating with single halo */}
           <motion.div
             className="relative order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
@@ -27,42 +27,41 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative aspect-square max-w-md mx-auto">
-              {/* Ambient glow */}
-              <div 
-                className="absolute inset-0"
+            <motion.div
+              className="relative aspect-square max-w-md mx-auto"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              {/* Soft ambient glow */}
+              <motion.div 
+                className="absolute inset-8 rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.12) 0%, transparent 60%)'
+                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.18) 0%, transparent 62%)'
                 }}
+                animate={{ opacity: [0.55, 0.9, 0.55], scale: [1, 1.04, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              {/* Decorative rings */}
+              {/* Single elegant halo */}
               <motion.div
-                className="absolute inset-4 rounded-full"
-                style={{ border: '1px solid rgba(0, 220, 255, 0.15)' }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-12 rounded-full"
-                style={{ border: '1px solid rgba(0, 220, 255, 0.2)' }}
-                animate={{ rotate: -360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-14 rounded-full"
+                style={{
+                  border: '1.5px solid rgba(0, 220, 255, 0.55)',
+                  boxShadow: `
+                    0 0 35px rgba(0, 220, 255, 0.28),
+                    0 0 90px rgba(0, 220, 255, 0.12),
+                    inset 0 0 35px rgba(0, 220, 255, 0.08)
+                  `,
+                }}
+                animate={{
+                  scale: [1, 1.035, 1],
+                  opacity: [0.75, 1, 0.75],
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              {/* Avatar container with glow */}
-              <div className="absolute inset-20 rounded-full overflow-hidden">
-                <div 
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    boxShadow: `
-                      0 0 60px rgba(0, 220, 255, 0.3),
-                      0 0 120px rgba(0, 220, 255, 0.15),
-                      inset 0 0 40px rgba(0, 220, 255, 0.1)
-                    `,
-                    border: '2px solid rgba(0, 220, 255, 0.4)',
-                  }}
-                />
+              {/* Avatar */}
+              <div className="absolute inset-20 rounded-full overflow-hidden border border-[#00dcff]/35 shadow-[0_0_45px_rgba(0,220,255,0.20)]">
                 <Image
                   src="/images/martina-avatar.png"
                   alt="Martina Assistant"
@@ -71,28 +70,29 @@ export function AboutSection() {
                 />
               </div>
 
-              {/* Floating particles */}
-              {[0, 1, 2, 3, 4, 5].map((i) => (
+              {/* Very subtle premium particles */}
+              {[0, 1, 2, 3].map((i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-1.5 h-1.5 rounded-full bg-primary/60"
+                  className="absolute w-1.5 h-1.5 rounded-full bg-[#00dcff]/60"
                   style={{
-                    left: `${50 + 42 * Math.cos((i * Math.PI) / 3)}%`,
-                    top: `${50 + 42 * Math.sin((i * Math.PI) / 3)}%`,
+                    left: `${50 + 38 * Math.cos((i * Math.PI) / 2)}%`,
+                    top: `${50 + 38 * Math.sin((i * Math.PI) / 2)}%`,
+                    boxShadow: '0 0 14px rgba(0, 220, 255, 0.55)',
                   }}
                   animate={{
-                    scale: [1, 1.8, 1],
-                    opacity: [0.4, 0.9, 0.4],
+                    scale: [0.8, 1.35, 0.8],
+                    opacity: [0.25, 0.75, 0.25],
                   }}
                   transition={{
-                    duration: 2.5,
-                    delay: i * 0.4,
+                    duration: 3.4,
+                    delay: i * 0.45,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
                 />
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right content */}
@@ -106,9 +106,11 @@ export function AboutSection() {
             <span className="text-[#00dcff] text-sm font-medium tracking-[0.35em] uppercase mb-4 block">
               ¿Qué es Martina?
             </span>
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight mb-6 text-balance">
               Tu asistente virtual inteligente
             </h2>
+
             <div className="space-y-4 text-foreground/75 text-lg leading-relaxed">
               <p>
                 Martina es una asistente de inteligencia artificial diseñada específicamente para negocios que buscan optimizar su atención al cliente y gestión de citas.
