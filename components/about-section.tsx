@@ -133,7 +133,7 @@ export function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
-                  <className="text-2xl md:text-3xl font-semibold text-primary mb-1">
+                  <div className="text-2xl md:text-3xl font-semibold text-[#00dcff] mb-1">
                     {stat.value}
                   </div>
                   <div className="text-xs text-muted-foreground">
