@@ -30,7 +30,7 @@ export function AboutSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               {/* Soft ambient glow */}
               <div
-                className="absolute inset-8 rounded-full"
+                className="absolute inset-16 rounded-full"
                 style={{
                   background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.16) 0%, transparent 62%)'
                 }}
