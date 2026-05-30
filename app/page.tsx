@@ -46,7 +46,7 @@ export default function Home() {
       )}
 
       {showBookingModal && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center px-3 bg-black/70 backdrop-blur-md">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center px-6 bg-black/70 backdrop-blur-md">
           <div className="relative w-full max-w-[30rem] rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
             <button
               onClick={handleCloseBooking}
