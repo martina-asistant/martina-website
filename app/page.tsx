@@ -46,7 +46,7 @@ export default function Home() {
       )}
 
       {showBookingModal && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center px-4 pt-3 bg-black/70 backdrop-blur-md">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center px-4 mt-2 bg-black/70 backdrop-blur-md">
           <div className="relative w-full max-w-[30rem] rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
             <button
               onClick={handleCloseBooking}
@@ -62,7 +62,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-semibold text-white">
                 Conoce a Martina Assistant
               </h2>
-              <p className="mt-3 text-sm md:text-base text-white/60 md:whitespace-nowrap">
+              <p className="mt-3 text-sm md:text-base text-white/60">
                 Cuéntame un poco sobre tu negocio y después elegiremos fecha y hora.
               </p>
             </div>
