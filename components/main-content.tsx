@@ -9,13 +9,15 @@ import { DemoSection } from './demo-section'
 import { HowItWorksSection } from './how-it-works-section'
 import { Footer } from './footer'
 
-export function MainContent() {
+interface MainContentProps {
+  onOpenBooking: () => void
+}
+
+export function MainContent({ onOpenBooking }: MainContentProps) {
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Subtle ambient particles */}
       <ParticleField intensity={0.3} />
 
-      {/* Navigation */}
       <motion.nav
         className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50"
         initial={{ opacity: 0, y: -20 }}
@@ -38,7 +40,7 @@ export function MainContent() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground border border-transparent rounded-full transition-all duration-300 hover:border-[#00dcff]/50 hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]] hover:bg-background/20"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground border border-transparent rounded-full transition-all duration-300 hover:border-[#00dcff]/50 hover:shadow-[0_0_25px_rgba(0,229,255,0.28)] hover:bg-background/20"
               >
                 {link.label}
               </a>
@@ -55,14 +57,12 @@ export function MainContent() {
         </div>
       </motion.nav>
 
-      {/* Spacer for fixed nav */}
       <div className="h-16" />
 
-      {/* Sections */}
       <AboutSection />
       <FeaturesSection />
       <DemoSection />
-      <HowItWorksSection />
+      <HowItWorksSection onOpenBooking={onOpenBooking} />
       <Footer />
     </div>
   )
