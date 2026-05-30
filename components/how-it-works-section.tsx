@@ -130,22 +130,29 @@ export function HowItWorksSection() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          <button
-            className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,220,255,0.5)] hover:scale-105"
-            style={{
-              boxShadow: '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
-            }}
-          >
-            <span className="relative z-10">COMENZAR AHORA</span>
-          </button>
-        </motion.div>
+<motion.div
+  className="text-center mt-16"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.6, duration: 0.6 }}
+>
+  <button
+    onClick={() =>
+      window.open(
+        'https://calendar.app.google/WhWroXGrwRh65yNRA',
+        '_blank'
+      )
+    }
+    className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,220,255,0.5)] hover:scale-105"
+    style={{
+      boxShadow:
+        '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
+    }}
+  >
+    <span className="relative z-10">AGENDAR CITA</span>
+  </button>
+</motion.div>
       </div>
     </section>
   )
