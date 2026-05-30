@@ -71,7 +71,7 @@ export function DemoSection() {
                 "Respuestas naturales y personalizadas",
                 "Gestión automática de reservas",
                 "Recordatorios inteligentes",
-                "Disponible en cualquier momento"
+                "Disponible las 24 horas del día"
               ].map((item, index) => (
                 <motion.div
                   key={item}
