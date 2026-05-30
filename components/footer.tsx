@@ -80,7 +80,7 @@ export function Footer() {
           >
             <h4 className="text-foreground font-medium mb-4">Empresa</h4>
             <ul className="space-y-3">
-              {["Sobre nosotros", "Blog", "Contacto", "Privacidad"].map((item) => (
+              {["Sobre nosotros", "Contacto", "Privacidad"].map((item) => (
                 <li key={item}>
                   <a 
                     href="#" 
