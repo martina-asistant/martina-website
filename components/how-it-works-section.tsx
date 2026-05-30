@@ -2,6 +2,10 @@
 
 import { motion } from 'framer-motion'
 
+interface HowItWorksSectionProps {
+  onOpenBooking: () => void
+}
+
 const steps = [
   {
     number: "01",
@@ -25,7 +29,7 @@ const steps = [
   }
 ]
 
-export function HowItWorksSection() {
+export function HowItWorksSection({ onOpenBooking }: HowItWorksSectionProps) {
   return (
     <section id="how-it-works" className="relative py-24 md:py-32">
       {/* Background */}
@@ -60,7 +64,6 @@ export function HowItWorksSection() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connection line */}
           <div 
             className="hidden lg:block absolute top-1/2 left-0 right-0 h-px -translate-y-1/2"
             style={{
@@ -78,7 +81,6 @@ export function HowItWorksSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
               >
-                {/* Step card */}
                 <div 
                   className="relative p-6 rounded-2xl backdrop-blur-sm h-full group transition-all duration-500 hover:translate-y-[-2px]"
                   style={{
@@ -87,7 +89,6 @@ export function HowItWorksSection() {
                     boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2)',
                   }}
                 >
-                  {/* Number badge */}
                   <div 
                     className="relative z-10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,220,255,0.3)]"
                     style={{
@@ -98,15 +99,14 @@ export function HowItWorksSection() {
                     <span className="text-xl font-bold text-primary">{step.number}</span>
                   </div>
 
-                  {/* Content */}
                   <h3 className="text-lg font-medium text-foreground mb-2">
                     {step.title}
                   </h3>
+
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {step.description}
                   </p>
 
-                  {/* Hover glow */}
                   <div 
                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
@@ -116,7 +116,6 @@ export function HowItWorksSection() {
                   />
                 </div>
 
-                {/* Connection dot */}
                 <div 
                   className="hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full"
                   style={{
@@ -130,29 +129,24 @@ export function HowItWorksSection() {
         </div>
 
         {/* CTA */}
-<motion.div
-  className="text-center mt-16"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.6, duration: 0.6 }}
->
-  <button
-    onClick={() =>
-      window.open(
-        'https://calendar.app.google/WhWroXGrwRh65yNRA',
-        '_blank'
-      )
-    }
-    className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,220,255,0.5)] hover:scale-105"
-    style={{
-      boxShadow:
-        '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
-    }}
-  >
-    <span className="relative z-10">AGENDAR CITA</span>
-  </button>
-</motion.div>
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          <button
+            onClick={onOpenBooking}
+            className="group relative px-10 py-4 text-base font-semibold tracking-wider uppercase bg-[#f5f5f0] text-[#1a1a2e] rounded-full transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,220,255,0.5)] hover:scale-105"
+            style={{
+              boxShadow:
+                '0 0 30px rgba(0, 220, 255, 0.3), inset 0 0 0 1px rgba(0, 220, 255, 0.3)',
+            }}
+          >
+            <span className="relative z-10">AGENDAR CITA</span>
+          </button>
+        </motion.div>
       </div>
     </section>
   )
