@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback } from 'react'
-import { X } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { HeroSection } from '@/components/hero-section'
 import { PortalTransition } from '@/components/portal-transition'
 import { MainContent } from '@/components/main-content'
@@ -47,21 +47,24 @@ export default function Home() {
 
       {showBookingModal && (
         <div className="fixed inset-0 z-[200] overflow-y-auto bg-black/70 backdrop-blur-md">
-          <div className="relative mx-auto my-10 w-full max-w-md translate-y-4 rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
-            <button
-              onClick={handleCloseBooking}
-              className="absolute right-5 top-5 text-white/60 hover:text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
+          <button
+            onClick={handleCloseBooking}
+            className="fixed right-6 top-6 z-[210] flex items-center gap-2 rounded-full border border-border/50 bg-[#020b12]/80 px-4 py-2 text-sm font-medium text-muted-foreground backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/50 hover:text-foreground hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
+          >
+            <ArrowLeft className="h-4 w-4 text-[#00dcff]" strokeWidth={2} />
+            Volver
+          </button>
 
+          <div className="relative mx-auto my-10 w-full max-w-md translate-y-4 rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
             <div className="mb-6 text-center">
-              <p className="text-[#00dcff] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
                 Agenda tu cita
               </p>
+
               <h2 className="text-2xl font-semibold text-white">
                 Conoce a Martina Assistant
               </h2>
+
               <p className="mt-3 text-sm text-white/60">
                 Cuéntame un poco sobre tu negocio y después elegiremos fecha y hora.
               </p>
