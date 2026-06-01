@@ -297,7 +297,7 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={goToPreviousMonth}
-                      className="text-2xl font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
+                      className="text-xs font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
                     >
                       {"<"}
                     </button>
@@ -309,7 +309,7 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={goToNextMonth}
-                      className="text-2xl font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
+                      className="text-xs font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
                     >
                       {">"}
                     </button>
