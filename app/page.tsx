@@ -385,7 +385,7 @@ export default function Home() {
                 {selectedDay && selectedHour && (
                   <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-4 text-sm text-white/70">
                     <span className="text-[#00dcff]">Resumen:</span>{" "}
-                    {selectedDay} a las {selectedHour}
+                    {selectedDay} a las {selectedHour} horas.
                   </div>
                 )}
 
