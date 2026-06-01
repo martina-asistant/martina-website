@@ -50,18 +50,25 @@ const handleCloseBooking = useCallback(() => {
       {showBookingModal && (
         <div className="fixed inset-0 z-[200] overflow-y-auto bg-black/70 backdrop-blur-md">
           <button
-            onClick={handleCloseBooking}
-            className="fixed left-5 top-4 z-[210] flex items-center gap-2 rounded-full border border-border/50 bg-[#020b12]/80 px-4 py-2 text-sm font-medium text-muted-foreground backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/50 hover:text-foreground hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
-          >
-            <ArrowLeft className="h-4 w-4 text-[#00dcff]" strokeWidth={2} />
-            Volver
-          </button>
+           <button
+  onClick={() => {
+    if (bookingStep === "calendar") {
+      setBookingStep("form")
+    } else {
+      handleCloseBooking()
+    }
+  }}
+  className="fixed left-5 top-4 z-[210] flex items-center gap-2 rounded-full border border-[#00dcff]/60 bg-[#062234] px-4 py-2 text-sm font-medium text-white/90 shadow-[0_0_18px_rgba(0,220,255,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#00dcff] hover:text-white hover:shadow-[0_0_35px_rgba(0,220,255,0.38)] hover:scale-105"
+>
+  <ArrowLeft className="h-4 w-4 text-[#00dcff]" strokeWidth={2.3} />
+  Volver
+</button>
         
           <button
   onClick={handleCloseBooking}
-  className="fixed right-5 top-4 z-[210] flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-[#020b12]/80 text-white/70 backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/50 hover:text-white hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
+  className="fixed right-5 top-4 z-[210] flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#8befff]/70 bg-[#062234] text-white shadow-[0_0_28px_rgba(0,220,255,0.35)] backdrop-blur-md transition-all duration-300 hover:border-[#8befff] hover:shadow-[0_0_42px_rgba(0,220,255,0.55)] hover:scale-105"
 >
-  <X className="h-4 w-4" />
+  <X className="h-4 w-4 text-white" strokeWidth={2.4} />
 </button>
 
           <div className="relative mx-auto my-10 w-full max-w-md translate-y-4 rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
