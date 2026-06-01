@@ -343,7 +343,7 @@ export default function Home() {
                             setSelectedDay(formatSelectedDate(item.date))
                             setSelectedHour("")
                           }}
-                          className={`aspect-square rounded-lg border text-xs font-medium transition-all duration-300 ${
+                          className={`aspect-square rounded-xl border text-sm font-medium transition-all duration-300 ${
                             isSelected
                               ? "border-[#00dcff] bg-[#00dcff]/20 text-white shadow-[0_0_25px_rgba(0,220,255,0.30)]"
                               : item.isDisabled
@@ -363,14 +363,14 @@ export default function Home() {
                     Hora disponible
                   </p>
 
-                  <div className="grid grid-cols-7 gap-1">
+                  <div className="grid grid-cols-3 gap-2">
                     {availableHours.map((hour) => (
                       <button
                         key={hour}
                         type="button"
                         disabled={!selectedDay}
                         onClick={() => setSelectedHour(hour)}
-                        className={`rounded-full border px-3 py-2.5 text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-35 ${
+                        className={`rounded-full border px-4 py-3 text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-35 ${
                           selectedHour === hour
                             ? "border-[#00dcff] bg-[#00dcff]/15 text-white shadow-[0_0_25px_rgba(0,220,255,0.25)]"
                             : "border-[#00dcff]/20 bg-white/5 text-white/65 hover:border-[#00dcff]/60 hover:text-white"
@@ -385,7 +385,7 @@ export default function Home() {
                 {selectedDay && selectedHour && (
                   <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-4 text-sm text-white/70">
                     <span className="text-[#00dcff]">Resumen:</span>{" "}
-                    {selectedDay} a las {selectedHour} horas.
+                    {selectedDay} a las {selectedHour}
                   </div>
                 )}
 
