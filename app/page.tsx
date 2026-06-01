@@ -6,6 +6,8 @@ import { HeroSection } from '@/components/hero-section'
 import { PortalTransition } from '@/components/portal-transition'
 import { MainContent } from '@/components/main-content'
 
+const TEST_MODE = true
+
 const availableDays = [
   { day: "Lun", date: "10", full: "Lunes 10" },
   { day: "Mar", date: "11", full: "Martes 11" },
@@ -23,6 +25,29 @@ export default function Home() {
   const [bookingStep, setBookingStep] = useState<"form" | "calendar">("form")
   const [selectedDay, setSelectedDay] = useState("")
   const [selectedHour, setSelectedHour] = useState("")
+  const [formError, setFormError] = useState("")
+
+  const [bookingForm, setBookingForm] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    negocio: "",
+    automatizar: "",
+  })
+
+  const resetBooking = useCallback(() => {
+    setBookingStep("form")
+    setSelectedDay("")
+    setSelectedHour("")
+    setFormError("")
+    setBookingForm({
+      nombre: "",
+      email: "",
+      telefono: "",
+      negocio: "",
+      automatizar: "",
+    })
+  }, [])
 
   const handleDiscover = useCallback(() => {
     setShowTransition(true)
@@ -39,10 +64,34 @@ export default function Home() {
 
   const handleCloseBooking = useCallback(() => {
     setShowBookingModal(false)
-    setBookingStep("form")
-    setSelectedDay("")
-    setSelectedHour("")
-  }, [])
+    resetBooking()
+  }, [resetBooking])
+
+  const handleChooseDate = () => {
+    const allFieldsCompleted = Object.values(bookingForm).every(
+      (value) => value.trim() !== ""
+    )
+
+    if (!TEST_MODE && !allFieldsCompleted) {
+      setFormError("Completa todos los campos antes de elegir fecha.")
+      return
+    }
+
+    setFormError("")
+    setBookingStep("calendar")
+  }
+
+  const updateBookingForm = (
+    field: keyof typeof bookingForm,
+    value: string
+  ) => {
+    setBookingForm((prev) => ({
+      ...prev,
+      [field]: value,
+    }))
+
+    if (formError) setFormError("")
+  }
 
   return (
     <main className="relative">
@@ -106,36 +155,52 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Nombre y apellidos"
+                  value={bookingForm.nombre}
+                  onChange={(e) => updateBookingForm("nombre", e.target.value)}
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
                 <input
                   type="email"
                   placeholder="Email"
+                  value={bookingForm.email}
+                  onChange={(e) => updateBookingForm("email", e.target.value)}
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
                 <input
                   type="tel"
                   placeholder="Teléfono"
+                  value={bookingForm.telefono}
+                  onChange={(e) => updateBookingForm("telefono", e.target.value)}
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
                 <input
                   type="text"
                   placeholder="Nombre del negocio"
+                  value={bookingForm.negocio}
+                  onChange={(e) => updateBookingForm("negocio", e.target.value)}
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
                 <textarea
                   placeholder="¿Qué te gustaría automatizar?"
                   rows={3}
+                  value={bookingForm.automatizar}
+                  onChange={(e) => updateBookingForm("automatizar", e.target.value)}
                   className="w-full resize-none rounded-2xl border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
+                {formError && (
+                  <div className="rounded-2xl border border-[#00dcff]/25 bg-[#00dcff]/10 px-4 py-3 text-sm text-white/80">
+                    {formError}
+                  </div>
+                )}
+
                 <button
                   type="button"
-                  onClick={() => setBookingStep("calendar")}
+                  onClick={handleChooseDate}
                   className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_65px_rgba(0,220,255,0.75)]"
                   style={{
                     boxShadow:
