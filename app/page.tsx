@@ -126,7 +126,7 @@ const handleCloseBooking = useCallback(() => {
     handleCloseBooking()
   }
 }}
-  className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.55)]"
+  className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_65px_rgba(0,220,255,0.75)]"
   style={{boxShadow:'0 0 40px rgba(0,220,255,0.45), inset 0 0 0 1px rgba(0,220,255,0.15)',}} >
             Elegir fecha
             </button>
