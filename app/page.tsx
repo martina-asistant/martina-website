@@ -49,7 +49,7 @@ export default function Home() {
         <div className="fixed inset-0 z-[200] overflow-y-auto bg-black/70 backdrop-blur-md">
           <button
             onClick={handleCloseBooking}
-            className="fixed right-6 top-6 z-[210] flex items-center gap-2 rounded-full border border-border/50 bg-[#020b12]/80 px-4 py-2 text-sm font-medium text-muted-foreground backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/50 hover:text-foreground hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
+            className="fixed right-5 top-4 z-[210] flex items-center gap-2 rounded-full border border-border/50 bg-[#020b12]/80 px-4 py-2 text-sm font-medium text-muted-foreground backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/50 hover:text-foreground hover:shadow-[0_0_25px_rgba(0,229,255,0.28)]"
           >
             <ArrowLeft className="h-4 w-4 text-[#00dcff]" strokeWidth={2} />
             Volver
