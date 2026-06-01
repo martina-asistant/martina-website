@@ -8,22 +8,86 @@ import { MainContent } from '@/components/main-content'
 
 const TEST_MODE = true
 
-const availableDays = [
-  { day: "Lun", date: "10", full: "Lunes 10" },
-  { day: "Mar", date: "11", full: "Martes 11" },
-  { day: "Mié", date: "12", full: "Miércoles 12" },
-  { day: "Jue", date: "13", full: "Jueves 13" },
-  { day: "Vie", date: "14", full: "Viernes 14" },
-]
+// 0 = domingo, 1 = lunes, 2 = martes, 3 = miércoles, 4 = jueves, 5 = viernes, 6 = sábado
+const WORKING_DAYS = [1, 2, 3, 4, 5]
+
+// Aquí podremos bloquear días concretos más adelante:
+// formato: "2026-06-04"
+const BLOCKED_DATES: string[] = []
 
 const availableHours = ["10:00", "11:00", "12:00", "16:00", "17:00", "18:00"]
+
+const weekDays = ["L", "M", "X", "J", "V", "S", "D"]
+
+function toDateKey(date: Date) {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, "0")
+  const day = String(date.getDate()).padStart(2, "0")
+  return `${year}-${month}-${day}`
+}
+
+function formatSelectedDate(date: Date) {
+  return date.toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  })
+}
+
+function formatMonthLabel(date: Date) {
+  const label = date.toLocaleDateString("es-ES", {
+    month: "long",
+    year: "numeric",
+  })
+
+  return label.charAt(0).toUpperCase() + label.slice(1)
+}
+
+function getCalendarDays(currentMonth: Date) {
+  const year = currentMonth.getFullYear()
+  const month = currentMonth.getMonth()
+
+  const firstDay = new Date(year, month, 1)
+  const daysInMonth = new Date(year, month + 1, 0).getDate()
+
+  // Convertimos para que lunes sea el primer día de la semana
+  const firstDayIndex = (firstDay.getDay() + 6) % 7
+
+  const totalCells = Math.ceil((firstDayIndex + daysInMonth) / 7) * 7
+
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
+  return Array.from({ length: totalCells }, (_, index) => {
+    const dayNumber = index - firstDayIndex + 1
+    const date = new Date(year, month, dayNumber)
+    const isCurrentMonth = date.getMonth() === month
+    const dateKey = toDateKey(date)
+    const isWorkingDay = WORKING_DAYS.includes(date.getDay())
+    const isBlocked = BLOCKED_DATES.includes(dateKey)
+    const isPast = date < today
+
+    return {
+      date,
+      dateKey,
+      dayNumber: date.getDate(),
+      isCurrentMonth,
+      isWorkingDay,
+      isBlocked,
+      isPast,
+      isDisabled: !isCurrentMonth || !isWorkingDay || isBlocked || isPast,
+    }
+  })
+}
 
 export default function Home() {
   const [showTransition, setShowTransition] = useState(false)
   const [showMainContent, setShowMainContent] = useState(false)
   const [showBookingModal, setShowBookingModal] = useState(false)
   const [bookingStep, setBookingStep] = useState<"form" | "calendar">("form")
+  const [currentMonth, setCurrentMonth] = useState(() => new Date())
   const [selectedDay, setSelectedDay] = useState("")
+  const [selectedDateKey, setSelectedDateKey] = useState("")
   const [selectedHour, setSelectedHour] = useState("")
   const [formError, setFormError] = useState("")
 
@@ -35,9 +99,13 @@ export default function Home() {
     automatizar: "",
   })
 
+  const calendarDays = getCalendarDays(currentMonth)
+
   const resetBooking = useCallback(() => {
     setBookingStep("form")
+    setCurrentMonth(new Date())
     setSelectedDay("")
+    setSelectedDateKey("")
     setSelectedHour("")
     setFormError("")
     setBookingForm({
@@ -91,6 +159,20 @@ export default function Home() {
     }))
 
     if (formError) setFormError("")
+  }
+
+  const goToPreviousMonth = () => {
+    setCurrentMonth((prev) => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
+    setSelectedDay("")
+    setSelectedDateKey("")
+    setSelectedHour("")
+  }
+
+  const goToNextMonth = () => {
+    setCurrentMonth((prev) => new Date(prev.getFullYear(), prev.getMonth() + 1, 1))
+    setSelectedDay("")
+    setSelectedDateKey("")
+    setSelectedHour("")
   }
 
   return (
@@ -216,28 +298,63 @@ export default function Home() {
               <div className="space-y-5">
                 <div>
                   <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
-                    Día disponible
+                    Elegir fecha
                   </p>
 
-                  <div className="grid grid-cols-5 gap-2">
-                    {availableDays.map((item) => (
-                      <button
-                        key={item.full}
-                        type="button"
-                        onClick={() => {
-                          setSelectedDay(item.full)
-                          setSelectedHour("")
-                        }}
-                        className={`rounded-2xl border px-2 py-3 text-center transition-all duration-300 ${
-                          selectedDay === item.full
-                            ? "border-[#00dcff] bg-[#00dcff]/15 text-white shadow-[0_0_25px_rgba(0,220,255,0.25)]"
-                            : "border-[#00dcff]/20 bg-white/5 text-white/65 hover:border-[#00dcff]/60 hover:text-white"
-                        }`}
-                      >
-                        <span className="block text-xs">{item.day}</span>
-                        <span className="block text-lg font-semibold">{item.date}</span>
-                      </button>
+                  <div className="mb-4 flex items-center justify-between rounded-2xl border border-[#00dcff]/20 bg-white/5 px-4 py-3">
+                    <button
+                      type="button"
+                      onClick={goToPreviousMonth}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00dcff]/20 text-[#00dcff] transition-all duration-300 hover:border-[#00dcff]/70 hover:shadow-[0_0_20px_rgba(0,220,255,0.25)]"
+                    >
+                      {"<"}
+                    </button>
+
+                    <span className="text-sm font-medium uppercase tracking-[0.18em] text-white/80">
+                      {formatMonthLabel(currentMonth)}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={goToNextMonth}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-[#00dcff]/20 text-[#00dcff] transition-all duration-300 hover:border-[#00dcff]/70 hover:shadow-[0_0_20px_rgba(0,220,255,0.25)]"
+                    >
+                      {">"}
+                    </button>
+                  </div>
+
+                  <div className="mb-2 grid grid-cols-7 gap-1 text-center text-[11px] font-semibold uppercase text-white/40">
+                    {weekDays.map((day) => (
+                      <div key={day}>{day}</div>
                     ))}
+                  </div>
+
+                  <div className="grid grid-cols-7 gap-1.5">
+                    {calendarDays.map((item) => {
+                      const isSelected = selectedDateKey === item.dateKey
+
+                      return (
+                        <button
+                          key={item.dateKey}
+                          type="button"
+                          disabled={item.isDisabled}
+                          onClick={() => {
+                            setSelectedDateKey(item.dateKey)
+                            setSelectedDay(formatSelectedDate(item.date))
+                            setSelectedHour("")
+                          }}
+                          className={`aspect-square rounded-xl border text-sm font-medium transition-all duration-300 ${
+                            isSelected
+                              ? "border-[#00dcff] bg-[#00dcff]/20 text-white shadow-[0_0_25px_rgba(0,220,255,0.30)]"
+                              : item.isDisabled
+                                ? "cursor-not-allowed border-white/5 bg-white/[0.03] text-white/20"
+                                : "border-[#00dcff]/20 bg-white/5 text-white/70 hover:border-[#00dcff]/60 hover:text-white hover:shadow-[0_0_18px_rgba(0,220,255,0.18)]"
+                          }`}
+                        >
+                          {item.dayNumber}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
 
