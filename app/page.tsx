@@ -65,7 +65,7 @@ const handleCloseBooking = useCallback(() => {
         
           <button
   onClick={handleCloseBooking}
-  className="fixed right-5 top-4 z-[210] flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#8befff]/70 bg-[#062234] text-white shadow-[0_0_28px_rgba(0,220,255,0.35)] backdrop-blur-md transition-all duration-300 hover:border-[#8befff] hover:shadow-[0_0_42px_rgba(0,220,255,0.55)] hover:scale-105"
+  className="fixed right-5 top-4 z-[210] flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#8befff]/70 bg-[#062234] text-white shadow-[0_0_28px_rgba(0,220,255,0.35)] backdrop-blur-md transition-all duration-300 hover:border-[#8befff] hover:shadow-[0_0_42px_rgba(0,220,255,0.55)] hover:scale-105"
 >
   <X className="h-4 w-4 text-white" strokeWidth={2.4} />
 </button>
