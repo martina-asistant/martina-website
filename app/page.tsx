@@ -12,11 +12,23 @@ export default function Home() {
   const [showBookingModal, setShowBookingModal] = useState(false)
   const [bookingStep, setBookingStep] = useState<"form" | "calendar">("form")
 
-  const handleDiscover = useCallback(() => {setShowTransition(true)}, [])
-  const handleTransitionComplete = useCallback(() => {window.scrollTo({ top: 0, behavior: "instant" }) setShowMainContent(true)
-  }, [])
-  const handleOpenBooking = useCallback(() => {setShowBookingModal(true)}, [])
-  const handleCloseBooking = useCallback(() => {setShowBookingModal(false)setBookingStep("form")}, [])
+ const handleDiscover = useCallback(() => {
+  setShowTransition(true)
+}, [])
+
+const handleTransitionComplete = useCallback(() => {
+  window.scrollTo({ top: 0, behavior: "instant" })
+  setShowMainContent(true)
+}, [])
+
+const handleOpenBooking = useCallback(() => {
+  setShowBookingModal(true)
+}, [])
+
+const handleCloseBooking = useCallback(() => {
+  setShowBookingModal(false)
+  setBookingStep("form")
+}, [])
   
   return (
     <main className="relative">
