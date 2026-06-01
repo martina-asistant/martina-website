@@ -10,24 +10,14 @@ export default function Home() {
   const [showTransition, setShowTransition] = useState(false)
   const [showMainContent, setShowMainContent] = useState(false)
   const [showBookingModal, setShowBookingModal] = useState(false)
+  const [bookingStep, setBookingStep] = useState<"form" | "calendar">("form")
 
-  const handleDiscover = useCallback(() => {
-    setShowTransition(true)
+  const handleDiscover = useCallback(() => {setShowTransition(true)}, [])
+  const handleTransitionComplete = useCallback(() => {window.scrollTo({ top: 0, behavior: "instant" }) setShowMainContent(true)
   }, [])
-
-  const handleTransitionComplete = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "instant" })
-    setShowMainContent(true)
-  }, [])
-
-  const handleOpenBooking = useCallback(() => {
-    setShowBookingModal(true)
-  }, [])
-
-  const handleCloseBooking = useCallback(() => {
-    setShowBookingModal(false)
-  }, [])
-
+  const handleOpenBooking = useCallback(() => {setShowBookingModal(true)}, [])
+  const handleCloseBooking = useCallback(() => {setShowBookingModal(false)setBookingStep("form")}, [])
+  
   return (
     <main className="relative">
       {!showMainContent && (
@@ -103,14 +93,11 @@ export default function Home() {
 
               <button
   type="button"
+  onClick={() => setBookingStep("calendar")}
   className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.55)]"
-  style={{
-    boxShadow:
-      '0 0 30px rgba(0,220,255,0.35), inset 0 0 0 1px rgba(0,220,255,0.15)',
-  }}
->
-                Elegir fecha
-              </button>
+  style={{boxShadow:'0 0 40px rgba(0,220,255,0.45), inset 0 0 0 1px rgba(0,220,255,0.15)',}} >
+            Elegir fecha
+            </button>
             </form>
           </div>
         </div>
