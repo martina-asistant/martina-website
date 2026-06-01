@@ -297,19 +297,19 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={goToPreviousMonth}
-                      className="text-2xl font-semibold text-[#00dcff] transition-all duration-300 hover:scale-110 hover:text-white hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
+                      className="text-2xl font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
                     >
                       {"<"}
                     </button>
 
-                    <span className="text-lg font-semibold uppercase tracking-[0.38em] text-[#00dcff]">
-                      {formatMonthLabel(currentMonth)}
-                    </span>
+                    <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#00dcff]">
+  {formatMonthLabel(currentMonth)}
+</span>
 
                     <button
                       type="button"
                       onClick={goToNextMonth}
-                      className="text-2xl font-semibold text-[#00dcff] transition-all duration-300 hover:scale-110 hover:text-white hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
+                      className="text-2xl font-semibold text-white transition-all duration-300 hover:scale-110 hover:text-[#00dcff] hover:drop-shadow-[0_0_12px_rgba(0,220,255,0.7)]"
                     >
                       {">"}
                     </button>
