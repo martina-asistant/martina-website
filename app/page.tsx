@@ -302,7 +302,7 @@ export default function Home() {
                       {"<"}
                     </button>
 
-                    <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#00dcff]">
+                    <span className="text-xs font-medium uppercase tracking-[0.30em] text-[#00dcff]">
   {formatMonthLabel(currentMonth)}
 </span>
 
