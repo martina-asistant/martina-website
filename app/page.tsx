@@ -49,7 +49,6 @@ const handleCloseBooking = useCallback(() => {
 
       {showBookingModal && (
         <div className="fixed inset-0 z-[200] overflow-y-auto bg-black/70 backdrop-blur-md">
-          <button
            <button
   onClick={() => {
     if (bookingStep === "calendar") {
