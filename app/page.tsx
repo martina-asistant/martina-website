@@ -76,7 +76,7 @@ export default function Home() {
   const [showTransition, setShowTransition] = useState(false)
   const [showMainContent, setShowMainContent] = useState(false)
   const [showBookingModal, setShowBookingModal] = useState(false)
-  const [bookingStep, setBookingStep] = useState<"form" | "calendar">("form")
+  const [bookingStep, setBookingStep] = useState<"form" | "calendar" | "success">("form")
   const [currentMonth, setCurrentMonth] = useState(() => new Date())
   const [selectedDay, setSelectedDay] = useState("")
   const [selectedDateKey, setSelectedDateKey] = useState("")
@@ -386,6 +386,7 @@ export default function Home() {
                 <button
                   type="button"
                   disabled={!selectedDay || !selectedHour}
+                  onClick={() => setBookingStep("success")}
                   className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_65px_rgba(0,220,255,0.75)] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:shadow-none"
                   style={{
                     boxShadow:
@@ -398,6 +399,79 @@ export default function Home() {
                 </button>
               </div>
             )}
+
+{bookingStep === "success" && (
+  <div className="space-y-6 text-center">
+    <div className="flex justify-center">
+      <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#00dcff]/40 bg-[#00dcff]/10 text-3xl shadow-[0_0_30px_rgba(0,220,255,0.25)]">
+        ✓
+      </div>
+    </div>
+
+    <div>
+      <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
+        Solicitud recibida
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white">
+        ¡Gracias por reservar tu reunión! 😊
+      </h2>
+    </div>
+
+    <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-5 text-left text-sm text-white/70">
+      <p className="mb-3">
+        <span className="text-[#00dcff]">Nombre:</span> {bookingForm.nombre}
+      </p>
+
+      <p className="mb-3">
+        <span className="text-[#00dcff]">Empresa:</span> {bookingForm.negocio}
+      </p>
+
+      <p className="mb-3">
+        <span className="text-[#00dcff]">Email:</span> {bookingForm.email}
+      </p>
+
+      <p>
+        <span className="text-[#00dcff]">Teléfono:</span> {bookingForm.telefono}
+      </p>
+    </div>
+
+    <div className="space-y-3 text-sm text-white/70">
+      <p>
+        En nuestra sesión descubrirás cómo Martina Assistant puede ayudarte a gestionar conversaciones, citas, recordatorios y tareas del día a día para que puedas dedicar más tiempo a lo que realmente importa: tu negocio 💡
+      </p>
+
+      <p>
+        🗓️ Duración aproximada: 30-45 minutos.
+      </p>
+
+      <p>
+        💻 Reunión online mediante Google Meet.
+      </p>
+
+      <p>
+        Veremos cómo trabaja Martina en situaciones reales y resolveremos cualquier duda que tengas.
+      </p>
+
+      <p className="text-[#00dcff] font-medium">
+        ¡Nos vemos pronto!✨
+      </p>
+    </div>
+
+    <button
+      type="button"
+      onClick={handleCloseBooking}
+      className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_65px_rgba(0,220,255,0.75)]"
+      style={{
+        boxShadow:
+          '0 0 40px rgba(0,220,255,0.45), inset 0 0 0 1px rgba(0,220,255,0.15)',
+      }}
+    >
+      Volver al inicio
+    </button>
+  </div>
+)}
+            
           </div>
         </div>
       )}
