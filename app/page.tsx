@@ -217,7 +217,7 @@ export default function Home() {
                 Conoce a Martina Assistant
               </h2>
 
-              <p className="mt-3 text-sm text-white/60">
+              <p className="mt-3 text-xs text-white/60">
                 {bookingStep === "form"
                   ? "Cuéntame un poco sobre tu negocio y después elegiremos fecha y hora."
                   : "Selecciona un día disponible y elige la hora que mejor te venga."}
