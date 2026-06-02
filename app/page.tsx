@@ -208,6 +208,8 @@ export default function Home() {
           </button>
 
           <div className="relative mx-auto my-10 w-full max-w-md translate-y-4 rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
+            
+            {bookingStep !== "success" && (
             <div className="mb-6 text-center">
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
                 {bookingStep === "form" ? "Agenda tu cita" : "Elige fecha y hora"}
@@ -223,6 +225,7 @@ export default function Home() {
                   : "Selecciona un día disponible y elige la hora que mejor te venga."}
               </p>
             </div>
+  )}
 
             {bookingStep === "form" && (
               <form className="space-y-4">
