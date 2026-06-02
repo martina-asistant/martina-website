@@ -141,6 +141,40 @@ export default function Home() {
     setBookingStep("calendar")
   }
 
+const handleConfirmMeeting = async () => {
+  try {
+    const response = await fetch(
+      "https://sheilacg.app.n8n.cloud/webhook/solicitud-demo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre: bookingForm.nombre,
+          email: bookingForm.email,
+          telefono: bookingForm.telefono,
+          negocio: bookingForm.negocio,
+          automatizar: bookingForm.automatizar,
+          fecha: selectedDateKey,
+          hora: selectedHour,
+        }),
+      }
+    )
+
+    const data = await response.json()
+
+    if (data.ok) {
+      setBookingStep("success")
+    } else {
+      alert("Ha ocurrido un error al enviar la solicitud.")
+    }
+  } catch (error) {
+    console.error(error)
+    alert("No se ha podido enviar la solicitud. Inténtalo de nuevo.")
+  }
+}
+  
   const updateBookingForm = (
     field: keyof typeof bookingForm,
     value: string
@@ -389,7 +423,7 @@ export default function Home() {
                 <button
                   type="button"
                   disabled={!selectedDay || !selectedHour}
-                  onClick={() => setBookingStep("success")}
+                  onClick={handleConfirmMeeting}
                   className="mt-2 w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_65px_rgba(0,220,255,0.75)] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:shadow-none"
                   style={{
                     boxShadow:
