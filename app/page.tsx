@@ -293,7 +293,7 @@ export default function Home() {
                     Elegir fecha
                   </p>
 
-                  <div className="mx-auto mb-6 flex max-w-[22rem] items-center justify-between">
+                  <div className="mx-auto mb-6 flex max-w-[18rem] items-center justify-between">
                     <button
                       type="button"
                       onClick={goToPreviousMonth}
@@ -302,7 +302,7 @@ export default function Home() {
                       {"<"}
                     </button>
 
-                    <span className="text-xs font-medium uppercase tracking-[0.30em] text-[#00dcff]">
+                   <span className="text-sm font-medium uppercase tracking-[0.25em] text-[#00dcff]">
   {formatMonthLabel(currentMonth)}
 </span>
 
