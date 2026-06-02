@@ -413,7 +413,7 @@ export default function Home() {
         Solicitud recibida
       </p>
 
-      <h2 className="text-2xl font-semibold text-white">
+      <h2 className="text-xl font-semibold text-white">
         ¡Gracias por reservar tu reunión! 😊
       </h2>
     </div>
