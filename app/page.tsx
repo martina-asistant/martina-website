@@ -11,7 +11,7 @@ const TEST_MODE = true
 const WORKING_DAYS = [1, 2, 3, 4, 5]
 const BLOCKED_DATES: string[] = []
 
-const availableHours = ["10:00", "11:00", "12:00", "16:00", "17:00", "18:00"]
+const DEFAULT_AVAILABLE_HOURS = ["10:00", "11:00", "12:00", "16:00", "17:00", "18:00"]
 const weekDays = ["L", "M", "X", "J", "V", "S", "D"]
 
 function toDateKey(date: Date) {
@@ -82,6 +82,8 @@ export default function Home() {
   const [selectedDateKey, setSelectedDateKey] = useState("")
   const [selectedHour, setSelectedHour] = useState("")
   const [formError, setFormError] = useState("")
+  const [availableHours, setAvailableHours] = useState(DEFAULT_AVAILABLE_HOURS)
+  const [loadingHours, setLoadingHours] = useState(false)
 
   const [bookingForm, setBookingForm] = useState({
     nombre: "",
@@ -190,6 +192,39 @@ const handleConfirmMeeting = async () => {
     if (formError) setFormError("")
   }
 
+const fetchAvailableHours = async (dateKey: string) => {
+  setLoadingHours(true)
+  setSelectedHour("")
+
+  try {
+    const response = await fetch(
+      "https://sheilacg.app.n8n.cloud/webhook/disponibilidad-demo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fecha: dateKey,
+        }),
+      }
+    )
+
+    const data = await response.json()
+
+    if (data.ok && Array.isArray(data.hours)) {
+      setAvailableHours(data.hours)
+    } else {
+      setAvailableHours([])
+    }
+  } catch (error) {
+    console.error(error)
+    setAvailableHours([])
+  } finally {
+    setLoadingHours(false)
+  }
+}
+  
   const goToPreviousMonth = () => {
     setCurrentMonth((prev) => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))
     setSelectedDay("")
@@ -372,10 +407,10 @@ const handleConfirmMeeting = async () => {
                             type="button"
                             disabled={item.isDisabled}
                             onClick={() => {
-                              setSelectedDateKey(item.dateKey)
-                              setSelectedDay(formatSelectedDate(item.date))
-                              setSelectedHour("")
-                            }}
+  setSelectedDateKey(item.dateKey)
+  setSelectedDay(formatSelectedDate(item.date))
+  fetchAvailableHours(item.dateKey)
+}}
                             className={`aspect-square rounded-xl border text-sm font-medium transition-all duration-300 ${
                               isSelected
                                 ? "border-[#00dcff] bg-[#00dcff]/20 text-white shadow-[0_0_25px_rgba(0,220,255,0.30)]"
@@ -398,21 +433,31 @@ const handleConfirmMeeting = async () => {
                   </p>
 
                   <div className="grid grid-cols-3 gap-2">
-                    {availableHours.map((hour) => (
-                      <button
-                        key={hour}
-                        type="button"
-                        disabled={!selectedDay}
-                        onClick={() => setSelectedHour(hour)}
-                        className={`rounded-full border px-4 py-3 text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-35 ${
-                          selectedHour === hour
-                            ? "border-[#00dcff] bg-[#00dcff]/15 text-white shadow-[0_0_25px_rgba(0,220,255,0.25)]"
-                            : "border-[#00dcff]/20 bg-white/5 text-white/65 hover:border-[#00dcff]/60 hover:text-white"
-                        }`}
-                      >
-                        {hour}
-                      </button>
-                    ))}
+                    {loadingHours ? (
+  <div className="col-span-3 rounded-2xl border border-[#00dcff]/20 bg-white/5 p-4 text-center text-sm text-white/60">
+    Consultando horas disponibles...
+  </div>
+) : availableHours.length > 0 ? (
+  availableHours.map((hour) => (
+    <button
+      key={hour}
+      type="button"
+      disabled={!selectedDay}
+      onClick={() => setSelectedHour(hour)}
+      className={`rounded-full border px-4 py-3 text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-35 ${
+        selectedHour === hour
+          ? "border-[#00dcff] bg-[#00dcff]/15 text-white shadow-[0_0_25px_rgba(0,220,255,0.25)]"
+          : "border-[#00dcff]/20 bg-white/5 text-white/65 hover:border-[#00dcff]/60 hover:text-white"
+      }`}
+    >
+      {hour}
+    </button>
+  ))
+) : (
+  <div className="col-span-3 rounded-2xl border border-[#00dcff]/20 bg-white/5 p-4 text-center text-sm text-white/60">
+    No quedan horas disponibles para este día.
+  </div>
+)}
                   </div>
                 </div>
 
