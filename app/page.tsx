@@ -85,6 +85,7 @@ export default function Home() {
 
   const [bookingForm, setBookingForm] = useState({
     nombre: "",
+    apellidos: "",
     email: "",
     telefono: "",
     negocio: "",
@@ -102,6 +103,7 @@ export default function Home() {
     setFormError("")
     setBookingForm({
       nombre: "",
+      apellidos: "",
       email: "",
       telefono: "",
       negocio: "",
@@ -152,6 +154,7 @@ const handleConfirmMeeting = async () => {
         },
         body: JSON.stringify({
           nombre: bookingForm.nombre,
+          apellidos: "",
           email: bookingForm.email,
           telefono: bookingForm.telefono,
           negocio: bookingForm.negocio,
