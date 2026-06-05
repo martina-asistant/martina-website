@@ -139,15 +139,15 @@ export function FeaturesSection() {
               }}
             >
               <span className="text-[#00dcff] text-xs tracking-[0.35em] uppercase font-light mb-3 block">
-                Elige tu solución
+                Elige tu plan 
               </span>
 
               <h3 className="text-lg font-medium text-foreground mb-2">
-                ¿Trabajas solo o gestionas un negocio?
+                PERSONALIZADO
               </h3>
 
               <p className="text-muted-foreground text-sm mb-4">
-                Descubre la versión de Martina que mejor se adapta a ti.
+                Descubre todas las posibilidades.
               </p>
 
               <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300">
