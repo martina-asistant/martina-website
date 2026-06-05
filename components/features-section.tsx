@@ -9,9 +9,7 @@ import {
   HelpCircle, 
   Bot,
   ArrowRight,
-  X,
-  Phone,
-  Building2
+  X
 } from 'lucide-react'
 
 const features = [
@@ -161,64 +159,27 @@ export function FeaturesSection() {
 
       {showSolutions && (
         <div className="fixed inset-0 z-[300] flex items-center justify-center px-4 bg-black/70 backdrop-blur-md">
-          <div className="relative w-full max-w-4xl rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 md:p-8 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
+          <div className="relative w-full max-w-3xl rounded-3xl border border-[#00dcff]/30 bg-[#020b12]/95 p-6 md:p-8 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
             <button
               onClick={() => setShowSolutions(false)}
-              className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#8befff]/70 bg-[#062234] text-white shadow-[0_0_28px_rgba(0,220,255,0.35)] transition-all duration-300 hover:scale-105 hover:border-[#8befff] hover:shadow-[0_0_42px_rgba(0,220,255,0.55)]"
+              className="absolute right-5 top-5 flex items-center gap-2 rounded-full border border-[#00dcff]/40 bg-[#062234]/80 px-4 py-2 text-sm text-white/70 shadow-[0_0_24px_rgba(0,220,255,0.20)] transition-all duration-300 hover:scale-105 hover:border-[#00dcff] hover:text-white"
             >
-              <X className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 rotate-180 text-[#00dcff]" />
+              Volver
             </button>
 
-            <div className="text-center mb-8">
-              <span className="text-[#00dcff] text-xs tracking-[0.35em] uppercase font-light mb-3 block">
-                Elige tu solución
-              </span>
-              <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                Descubre qué Martina se adapta mejor a ti
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-5">
-              <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-6">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[#00dcff]/25 bg-[#00dcff]/10">
-                  <Phone className="h-6 w-6 text-[#00dcff]" strokeWidth={1.5} />
-                </div>
-
-                <p className="mb-3 text-xs font-light uppercase tracking-[0.35em] text-[#00dcff]">
-                  MARTINA AGENTE 007
-                </p>
-
-                <h3 className="mb-3 text-xl font-semibold text-white">
-                  Tu asistente personal de llamadas
-                </h3>
-
-                <p className="mb-6 text-sm leading-relaxed text-white/60">
-                  Pensado para profesionales que no pueden atender el teléfono mientras trabajan, están reunidos o visitando clientes.
-                </p>
-
-                <button
-                  disabled
-                  className="w-full rounded-full border border-[#00dcff]/25 bg-white/5 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-white/40 cursor-not-allowed"
-                >
-                  Próximamente
-                </button>
-              </div>
-
-              <div className="rounded-2xl border border-[#00dcff]/35 bg-[#00dcff]/[0.06] p-6 shadow-[0_0_40px_rgba(0,220,255,0.12)]">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[#00dcff]/35 bg-[#00dcff]/10">
-                  <Building2 className="h-6 w-6 text-[#00dcff]" strokeWidth={1.5} />
-                </div>
-
+            <div className="mt-12 space-y-5">
+              <div className="rounded-2xl border border-[#00dcff]/35 bg-[#00dcff]/[0.06] p-6 md:p-7 shadow-[0_0_40px_rgba(0,220,255,0.12)]">
                 <p className="mb-3 text-xs font-light uppercase tracking-[0.35em] text-[#00dcff]">
                   MARTINA ASSISTANT BUSINESS
                 </p>
 
-                <h3 className="mb-3 text-xl font-semibold text-white">
+                <h3 className="mb-3 text-xl md:text-2xl font-semibold text-white">
                   Tu recepcionista virtual para negocios
                 </h3>
 
-                <p className="mb-6 text-sm leading-relaxed text-white/60">
-                  Automatiza llamadas, WhatsApp, citas, recordatorios y tareas administrativas desde una solución diseñada para empresas.
+                <p className="mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-white/60">
+                  Automatiza llamadas, WhatsApp, citas, recordatorios y gestión de clientes desde una solución diseñada para empresas.
                 </p>
 
                 <button
@@ -226,15 +187,52 @@ export function FeaturesSection() {
                     setShowSolutions(false)
                     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })
                   }}
-                  className="w-full rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
+                  className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
                   style={{
                     boxShadow: '0 0 35px rgba(0,220,255,0.38), inset 0 0 0 1px rgba(0,220,255,0.15)',
                   }}
                 >
-                  Explorar
+                  Saber más
                 </button>
               </div>
+
+              <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-6 md:p-7">
+                <p className="mb-3 text-xs font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                  MARTINA AGENTE 007
+                </p>
+
+                <h3 className="mb-3 text-xl md:text-2xl font-semibold text-white">
+                  Tu asistente personal de llamadas
+                </h3>
+
+                <p className="mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-white/60">
+                  Pensado para profesionales que no pueden atender el teléfono mientras trabajan, están reunidos o visitando clientes.
+                </p>
+
+                <div className="flex items-center gap-4">
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-full border border-[#00dcff]/40 bg-[#00dcff]/10 shadow-[0_0_28px_rgba(0,220,255,0.25)]">
+                    <div className="absolute inset-0 rounded-full border border-[#00dcff]/40 animate-ping" />
+                    <div className="h-3 w-3 rounded-full bg-[#00dcff] shadow-[0_0_18px_rgba(0,220,255,0.9)]" />
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#00dcff]">
+                      Próximamente
+                    </p>
+                    <p className="mt-1 text-sm text-white/50">
+                      Estamos preparando esta solución.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <button
+              onClick={() => setShowSolutions(false)}
+              className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#8befff]/70 bg-[#062234] text-white shadow-[0_0_28px_rgba(0,220,255,0.35)] transition-all duration-300 hover:scale-105 hover:border-[#8befff] hover:shadow-[0_0_42px_rgba(0,220,255,0.55)] md:hidden"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
         </div>
       )}
