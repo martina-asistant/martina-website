@@ -170,26 +170,26 @@ export function FeaturesSection() {
           </button>
 
           <div className="min-h-screen flex items-center justify-center px-5 py-24">
-            <div className="w-full max-w-6xl rounded-[2rem] border border-[#00dcff]/30 bg-[#020b12]/95 p-8 md:p-12 shadow-[0_0_90px_rgba(0,220,255,0.22)]">
-              <div className="space-y-10">
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/35 bg-[#00dcff]/[0.055] px-8 py-10 md:px-12 md:py-12 shadow-[0_0_45px_rgba(0,220,255,0.14)] min-h-[260px] flex flex-col justify-center">
+            <div className="w-full max-w-4xl rounded-[2rem] border border-[#00dcff]/30 bg-[#020b12]/95 p-8 md:p-10 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
+              <div className="space-y-7">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/35 bg-[#00dcff]/[0.055] px-8 py-8 md:px-10 md:py-9 shadow-[0_0_42px_rgba(0,220,255,0.13)] min-h-[230px] flex flex-col justify-center">
                   <div 
-                    className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-30"
+                    className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-24"
                     style={{
-                      background: 'radial-gradient(circle at 80% 50%, rgba(0,220,255,0.32) 0%, transparent 45%)'
+                      background: 'radial-gradient(circle at 82% 50%, rgba(0,220,255,0.28) 0%, transparent 46%)'
                     }}
                   />
 
-                  <div className="relative max-w-3xl">
-                    <p className="mb-5 text-sm md:text-base font-light uppercase tracking-[0.42em] text-[#00dcff]">
+                  <div className="relative max-w-2xl">
+                    <p className="mb-4 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
                       MARTINA ASSISTANT BUSINESS
                     </p>
 
-                    <h3 className="mb-5 text-2xl md:text-4xl font-semibold leading-tight text-white">
+                    <h3 className="mb-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
                       Tu recepcionista virtual para negocios
                     </h3>
 
-                    <p className="mb-8 max-w-2xl text-sm md:text-lg leading-relaxed text-white/58">
+                    <p className="mb-7 max-w-2xl text-sm md:text-base leading-relaxed text-white/58">
                       Llamadas, WhatsApp, citas, recordatorios y gestión automatizada para empresas.
                     </p>
 
@@ -198,7 +198,7 @@ export function FeaturesSection() {
                         setShowSolutions(false)
                         document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })
                       }}
-                      className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-10 py-3.5 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
+                      className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-9 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
                       style={{
                         boxShadow: '0 0 35px rgba(0,220,255,0.38), inset 0 0 0 1px rgba(0,220,255,0.15)',
                       }}
@@ -208,31 +208,35 @@ export function FeaturesSection() {
                   </div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/22 bg-white/[0.045] px-8 py-10 md:px-12 md:py-12 min-h-[260px] flex flex-col justify-center">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/22 bg-white/[0.045] px-8 py-8 md:px-10 md:py-9 min-h-[230px] flex flex-col justify-center">
                   <div 
-                    className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-20"
+                    className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-18"
                     style={{
-                      background: 'radial-gradient(circle at 80% 80%, rgba(0,220,255,0.28) 0%, transparent 45%)'
+                      background: 'radial-gradient(circle at 82% 80%, rgba(0,220,255,0.24) 0%, transparent 46%)'
                     }}
                   />
 
-                  <div className="relative max-w-3xl">
-                    <p className="mb-5 text-sm md:text-base font-light uppercase tracking-[0.42em] text-[#00dcff]">
+                  <div className="relative max-w-2xl">
+                    <p className="mb-4 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
                       MARTINA AGENTE 007
                     </p>
 
-                    <h3 className="mb-8 text-2xl md:text-4xl font-semibold leading-tight text-white">
+                    <h3 className="mb-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
                       Tu asistente personal de llamadas
                     </h3>
 
+                    <p className="mb-7 max-w-2xl text-sm md:text-base leading-relaxed text-white/58">
+                      Pensado para profesionales que no pueden atender el teléfono mientras trabajan, están reunidos o visitando clientes.
+                    </p>
+
                     <div className="flex items-center gap-5">
-                      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#00dcff]/45 bg-[#00dcff]/10 shadow-[0_0_30px_rgba(0,220,255,0.28)]">
+                      <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#00dcff]/45 bg-[#00dcff]/10 shadow-[0_0_28px_rgba(0,220,255,0.28)]">
                         <div className="absolute inset-0 rounded-full border border-[#00dcff]/50 animate-ping" />
                         <div className="absolute inset-2 rounded-full border border-[#00dcff]/25" />
                         <div className="h-3 w-3 rounded-full bg-[#00dcff] shadow-[0_0_18px_rgba(0,220,255,0.9)]" />
                       </div>
 
-                      <p className="text-sm md:text-base font-semibold uppercase tracking-[0.42em] text-[#00dcff]">
+                      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#00dcff]">
                         Próximamente
                       </p>
                     </div>
