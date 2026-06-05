@@ -170,11 +170,11 @@ export function FeaturesSection() {
 
             <div className="mt-12 space-y-5">
               <div className="rounded-2xl border border-[#00dcff]/35 bg-[#00dcff]/[0.06] p-6 md:p-7 shadow-[0_0_40px_rgba(0,220,255,0.12)]">
-                <p className="mb-3 text-xs font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                <p className="mb-3 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
                   MARTINA ASSISTANT BUSINESS
                 </p>
 
-                <h3 className="mb-3 text-xl md:text-2xl font-semibold text-white">
+                <h3 className="mb-3 text-sm md:text-2xl font-semibold text-white">
                   Tu recepcionista virtual para negocios
                 </h3>
 
@@ -197,11 +197,11 @@ export function FeaturesSection() {
               </div>
 
               <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-6 md:p-7">
-                <p className="mb-3 text-xs font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                <p className="mb-3 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
                   MARTINA AGENTE 007
                 </p>
 
-                <h3 className="mb-3 text-xl md:text-2xl font-semibold text-white">
+                <h3 className="mb-3 text-sm md:text-2xl font-semibold text-white">
                   Tu asistente personal de llamadas
                 </h3>
 
@@ -216,13 +216,10 @@ export function FeaturesSection() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#00dcff]">
+                    <p className="text-xl font-semibold uppercase tracking-[0.25em] text-[#00dcff]">
                       Próximamente
                     </p>
-                    <p className="mt-1 text-sm text-white/50">
-                      Estamos preparando esta solución.
-                    </p>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
