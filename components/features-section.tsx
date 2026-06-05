@@ -142,7 +142,7 @@ export function FeaturesSection() {
                 Elige tu plan 
               </span>
 
-              <h3 className="text-lg font-medium text-foreground mb-2">
+              <h3 className="text-sm font-medium text-foreground mb-2">
                 PERSONALIZADO
               </h3>
 
