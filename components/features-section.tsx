@@ -136,16 +136,22 @@ export function FeaturesSection() {
                 boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 220, 255, 0.1)',
               }}
             >
-              <h3 className="text-lg font-medium text-foreground mb-2">
-                ¿Quieres saber más?
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Descubre todas las posibilidades
-              </p>
-              <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300">
-                <span>Explorar</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
+              <span className="text-[#00dcff] text-xs tracking-[0.35em] uppercase font-light mb-3 block">
+  Elige tu solución
+</span>
+
+<h3 className="text-lg font-medium text-foreground mb-2">
+  ¿Trabajas solo o gestionas un negocio?
+</h3>
+
+<p className="text-muted-foreground text-sm mb-4">
+  Descubre la versión de Martina que mejor se adapta a ti.
+</p>
+
+<div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300">
+  <span>Explorar</span>
+  <ArrowRight className="w-4 h-4" />
+</div>
             </div>
           </motion.div>
         </div>
