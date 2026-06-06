@@ -169,27 +169,28 @@ export function FeaturesSection() {
             Volver
           </button>
 
-          <div className="min-h-screen flex items-center justify-center px-5 py-24">
-            <div className="w-full max-w-4xl rounded-[2rem] border border-[#00dcff]/30 bg-[#020b12]/95 p-8 md:p-10 shadow-[0_0_80px_rgba(0,220,255,0.22)]">
-              <div className="space-y-7">
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/35 bg-[#00dcff]/[0.055] px-8 py-8 md:px-10 md:py-9 shadow-[0_0_42px_rgba(0,220,255,0.13)] min-h-[230px] flex flex-col justify-center">
+          <div className="min-h-screen flex items-center justify-center px-5 py-20">
+            <div className="w-full max-w-2xl rounded-[1.75rem] border border-[#00dcff]/30 bg-[#020b12]/95 p-5 md:p-6 shadow-[0_0_70px_rgba(0,220,255,0.20)]">
+              <div className="space-y-5">
+
+                <div className="relative overflow-hidden rounded-[1.45rem] border border-[#00dcff]/35 bg-[#00dcff]/[0.055] px-6 py-6 md:px-7 md:py-6 shadow-[0_0_34px_rgba(0,220,255,0.12)] min-h-[165px] flex flex-col justify-center">
                   <div 
-                    className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-24"
+                    className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-20"
                     style={{
-                      background: 'radial-gradient(circle at 82% 50%, rgba(0,220,255,0.28) 0%, transparent 46%)'
+                      background: 'radial-gradient(circle at 82% 50%, rgba(0,220,255,0.24) 0%, transparent 46%)'
                     }}
                   />
 
-                  <div className="relative max-w-2xl">
-                    <p className="mb-4 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                  <div className="relative max-w-xl">
+                    <p className="mb-3 text-base md:text-lg font-light uppercase tracking-[0.35em] text-[#00dcff]">
                       MARTINA ASSISTANT BUSINESS
                     </p>
 
-                    <h3 className="mb-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
+                    <h3 className="mb-3 text-xl md:text-2xl font-semibold leading-tight text-white">
                       Tu recepcionista virtual para negocios
                     </h3>
 
-                    <p className="mb-7 max-w-2xl text-sm md:text-base leading-relaxed text-white/58">
+                    <p className="mb-5 max-w-xl text-sm leading-relaxed text-white/58">
                       Llamadas, WhatsApp, citas, recordatorios y gestión automatizada para empresas.
                     </p>
 
@@ -198,9 +199,9 @@ export function FeaturesSection() {
                         setShowSolutions(false)
                         document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })
                       }}
-                      className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-9 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
+                      className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
                       style={{
-                        boxShadow: '0 0 35px rgba(0,220,255,0.38), inset 0 0 0 1px rgba(0,220,255,0.15)',
+                        boxShadow: '0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)',
                       }}
                     >
                       Saber más
@@ -208,32 +209,32 @@ export function FeaturesSection() {
                   </div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#00dcff]/22 bg-white/[0.045] px-8 py-8 md:px-10 md:py-9 min-h-[230px] flex flex-col justify-center">
+                <div className="relative overflow-hidden rounded-[1.45rem] border border-[#00dcff]/22 bg-white/[0.045] px-6 py-6 md:px-7 md:py-6 min-h-[165px] flex flex-col justify-center">
                   <div 
-                    className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-18"
+                    className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-16"
                     style={{
-                      background: 'radial-gradient(circle at 82% 80%, rgba(0,220,255,0.24) 0%, transparent 46%)'
+                      background: 'radial-gradient(circle at 82% 80%, rgba(0,220,255,0.22) 0%, transparent 46%)'
                     }}
                   />
 
-                  <div className="relative max-w-2xl">
-                    <p className="mb-4 text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                  <div className="relative max-w-xl">
+                    <p className="mb-3 text-base md:text-lg font-light uppercase tracking-[0.35em] text-[#00dcff]">
                       MARTINA AGENTE 007
                     </p>
 
-                    <h3 className="mb-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
+                    <h3 className="mb-3 text-xl md:text-2xl font-semibold leading-tight text-white">
                       Tu asistente personal de llamadas
                     </h3>
 
-                    <p className="mb-7 max-w-2xl text-sm md:text-base leading-relaxed text-white/58">
+                    <p className="mb-5 max-w-xl text-sm leading-relaxed text-white/58">
                       Pensado para profesionales que no pueden atender el teléfono mientras trabajan, están reunidos o visitando clientes.
                     </p>
 
-                    <div className="flex items-center gap-5">
-                      <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#00dcff]/45 bg-[#00dcff]/10 shadow-[0_0_28px_rgba(0,220,255,0.28)]">
+                    <div className="flex items-center gap-4">
+                      <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#00dcff]/45 bg-[#00dcff]/10 shadow-[0_0_24px_rgba(0,220,255,0.25)]">
                         <div className="absolute inset-0 rounded-full border border-[#00dcff]/50 animate-ping" />
                         <div className="absolute inset-2 rounded-full border border-[#00dcff]/25" />
-                        <div className="h-3 w-3 rounded-full bg-[#00dcff] shadow-[0_0_18px_rgba(0,220,255,0.9)]" />
+                        <div className="h-2.5 w-2.5 rounded-full bg-[#00dcff] shadow-[0_0_16px_rgba(0,220,255,0.9)]" />
                       </div>
 
                       <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#00dcff]">
@@ -242,6 +243,7 @@ export function FeaturesSection() {
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
