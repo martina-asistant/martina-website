@@ -184,7 +184,7 @@ export function FeaturesSection() {
                   <div className="relative max-w-xl">
                     <h3 className="mb-3 text-base md:text-lg font-medium leading-tight text-white">
                       MARTINA ASSISTANT BUSINESS
-                    </p>
+                    </h3>
 
                     <h3 className="mb-3 text-lg md:text-xl font-medium leading-tight text-white">
                       Tu recepcionista virtual para negocios
@@ -220,7 +220,7 @@ export function FeaturesSection() {
                   <div className="relative max-w-xl">
                     <h3 className="mb-3 text-base md:text-lg font-medium leading-tight text-white">
                       MARTINA AGENTE 007
-                    </p>
+                    </h3>
 
                     <h3 className="mb-3 text-lg md:text-xl font-medium leading-tight text-white">
                       Tu asistente personal de llamadas
