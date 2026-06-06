@@ -182,16 +182,16 @@ export function FeaturesSection() {
                   />
 
                   <div className="relative max-w-xl">
-                    <p className="mb-3 text-base md:text-lg font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                    <h3 className="mb-3 text-base md:text-lg font-medium leading-tight text-white">
                       MARTINA ASSISTANT BUSINESS
                     </p>
 
-                    <h3 className="mb-3 text-xl md:text-2xl font-semibold leading-tight text-white">
+                    <h3 className="mb-3 text-lg md:text-xl font-medium leading-tight text-white">
                       Tu recepcionista virtual para negocios
                     </h3>
 
                     <p className="mb-5 max-w-xl text-sm leading-relaxed text-white/58">
-                      Llamadas, WhatsApp, citas, recordatorios y gestión automatizada para empresas.
+                      Pensado para negocios que quieren ofrecer una atención profesional las 24 horas, automatizar citas y optimizar su gestión diaria.
                     </p>
 
                     <button
@@ -218,11 +218,11 @@ export function FeaturesSection() {
                   />
 
                   <div className="relative max-w-xl">
-                    <p className="mb-3 text-base md:text-lg font-light uppercase tracking-[0.35em] text-[#00dcff]">
+                    <h3 className="mb-3 text-base md:text-lg font-medium leading-tight text-white">
                       MARTINA AGENTE 007
                     </p>
 
-                    <h3 className="mb-3 text-xl md:text-2xl font-semibold leading-tight text-white">
+                    <h3 className="mb-3 text-lg md:text-xl font-medium leading-tight text-white">
                       Tu asistente personal de llamadas
                     </h3>
 
