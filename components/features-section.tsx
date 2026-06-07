@@ -246,7 +246,7 @@ export function FeaturesSection() {
     Próximamente
   </p>
 </button>
-                    </div>
+                   
                   </div>
                 </div>
 
