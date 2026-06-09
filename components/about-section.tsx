@@ -5,22 +5,54 @@ import Image from 'next/image'
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative pt-10 pb-12 md:pt-12 md:pb-16">
+    <section id="about" className="relative pt-8 pb-2 md:pt-10 md:pb-4 overflow-hidden">
       {/* Ambient background */}
       <div
         className="absolute inset-0 -z-10"
         style={{
           background: `
-            radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0, 220, 255, 0.09) 0%, transparent 52%),
-            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 180, 220, 0.06) 0%, transparent 52%),
-            radial-gradient(circle at 72% 62%, rgba(0, 220, 255, 0.10) 0%, transparent 18%)
+            radial-gradient(ellipse 70% 50% at 18% 28%, rgba(0, 220, 255, 0.16) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 45% at 82% 18%, rgba(0, 220, 255, 0.12) 0%, transparent 55%),
+            radial-gradient(circle at 72% 62%, rgba(0, 220, 255, 0.18) 0%, transparent 20%),
+            radial-gradient(circle at 50% 100%, rgba(0, 220, 255, 0.10) 0%, transparent 42%)
           `
         }}
       />
 
+      {/* Visible particles */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        {[
+          'top-[8%] left-[60%]',
+          'top-[16%] left-[79%]',
+          'top-[36%] left-[72%]',
+          'top-[58%] left-[96%]',
+          'top-[78%] left-[53%]',
+          'top-[82%] left-[12%]',
+          'top-[66%] left-[4%]',
+          'top-[22%] left-[26%]',
+          'top-[12%] left-[88%]',
+          'top-[88%] left-[97%]',
+        ].map((pos, index) => (
+          <motion.span
+            key={index}
+            className={`absolute ${pos} h-1.5 w-1.5 rounded-full bg-[#00dcff] shadow-[0_0_18px_rgba(0,220,255,0.95)]`}
+            animate={{
+              opacity: [0.25, 1, 0.25],
+              scale: [0.8, 1.6, 0.8],
+            }}
+            transition={{
+              duration: 2.8 + index * 0.25,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: index * 0.35,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left visual - Avatar with subtle breathing glow */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left visual */}
           <motion.div
             className="relative order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
@@ -29,48 +61,45 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative aspect-square max-w-md mx-auto">
-              {/* Soft ambient glow */}
               <div
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.18) 0%, transparent 62%)'
+                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.28) 0%, transparent 64%)'
                 }}
               />
 
-              {/* Static halo with breathing glow */}
               <motion.div
                 className="absolute inset-[60px] rounded-full"
                 style={{
-                  border: '2.5px solid rgba(0, 220, 255, 0.75)',
+                  border: '2.5px solid rgba(0, 220, 255, 0.85)',
                 }}
                 animate={{
                   boxShadow: [
                     `
-                      0 0 25px rgba(0, 220, 255, 0.18),
-                      0 0 60px rgba(0, 220, 255, 0.08),
-                      inset 0 0 25px rgba(0, 220, 255, 0.05)
+                      0 0 35px rgba(0, 220, 255, 0.35),
+                      0 0 90px rgba(0, 220, 255, 0.18),
+                      inset 0 0 25px rgba(0, 220, 255, 0.10)
                     `,
                     `
-                      0 0 75px rgba(0, 220, 255, 0.58),
-                      0 0 150px rgba(0, 220, 255, 0.30),
-                      inset 0 0 42px rgba(0, 220, 255, 0.12)
+                      0 0 95px rgba(0, 220, 255, 0.75),
+                      0 0 180px rgba(0, 220, 255, 0.38),
+                      inset 0 0 50px rgba(0, 220, 255, 0.18)
                     `,
                     `
-                      0 0 25px rgba(0, 220, 255, 0.18),
-                      0 0 60px rgba(0, 220, 255, 0.08),
-                      inset 0 0 25px rgba(0, 220, 255, 0.05)
+                      0 0 35px rgba(0, 220, 255, 0.35),
+                      0 0 90px rgba(0, 220, 255, 0.18),
+                      inset 0 0 25px rgba(0, 220, 255, 0.10)
                     `
                   ],
                 }}
                 transition={{
-                  duration: 6,
+                  duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
               />
 
-              {/* Avatar */}
-              <div className="absolute inset-20 rounded-full overflow-hidden border border-[#00dcff]/35 shadow-[0_0_45px_rgba(0,220,255,0.20)]">
+              <div className="absolute inset-20 rounded-full overflow-hidden border border-[#00dcff]/50 shadow-[0_0_65px_rgba(0,220,255,0.32)]">
                 <Image
                   src="/images/martina-avatar.png"
                   alt="Martina Assistant"
@@ -107,7 +136,7 @@ export function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-3 gap-6 mt-9">
               {[
                 { value: "24/7", label: "Disponibilidad" },
                 { value: "< 3s", label: "Tiempo respuesta" },
@@ -115,16 +144,18 @@ export function AboutSection() {
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="relative p-5 rounded-2xl bg-[#02141a]/70 border border-[#00dcff]/25 backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/60 hover:shadow-[0_0_35px_rgba(0,220,255,0.22)] hover:-translate-y-1"
+                  className="relative p-5 rounded-2xl bg-[#02141a]/75 border border-[#00dcff]/35 backdrop-blur-md transition-all duration-300 hover:border-[#00dcff]/70 hover:shadow-[0_0_40px_rgba(0,220,255,0.32)] hover:-translate-y-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
-                  <div className="text-2xl md:text-3xl font-semibold text-[#00dcff] mb-1">
+                  <div className="absolute inset-0 rounded-2xl bg-[#00dcff]/[0.03]" />
+
+                  <div className="relative text-2xl md:text-3xl font-semibold text-[#00dcff] mb-1 drop-shadow-[0_0_12px_rgba(0,220,255,0.65)]">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="relative text-xs text-muted-foreground">
                     {stat.label}
                   </div>
                 </motion.div>
