@@ -31,13 +31,13 @@ const plans = [
       "Atención por WhatsApp 24/7",
       "Gestión completa de citas por WhatsApp",
       "Reconocimiento personalizado",
-      "Panel de control básico",
-      "Dashboard de actividad",
-      "Gestión de conversaciones",
-      "Recordatorios automáticos de citas",
       "Recordatorios de cita con confirmación",
       "Reprogramación y cancelación de citas",
       "Aviso tras cancelación para optimizar nuevos huecos disponibles",
+      "PANEL_BASICO",
+      "Dashboard de actividad",
+      "Gestión de conversaciones",
+      "Recordatorios automáticos de citas",
     ],
   },
   {
@@ -49,17 +49,39 @@ const plans = [
     features: [
       "Todo lo incluido en Pro",
       "Sistema de recalls automáticos",
-      "Panel premium completo",
+      "Consulta de citas pasadas",
+      "Métricas avanzadas de seguimiento",
+      "Base de datos avanzada",
+      "PANEL_PREMIUM",
       "Control de recalls",
       "Control de recordatorios de citas",
       "Agendas integradas sin software adicional",
       "Gestión de bloqueos y disponibilidad",
-      "Consulta de citas pasadas",
-      "Métricas avanzadas de seguimiento",
-      "Base de datos avanzada",
     ],
   },
 ]
+
+function isPanelTitle(feature: string) {
+  return feature === "PANEL_BASICO" || feature === "PANEL_PREMIUM"
+}
+
+function isPanelSubItem(feature: string) {
+  return [
+    "Dashboard de actividad",
+    "Gestión de conversaciones",
+    "Recordatorios automáticos de citas",
+    "Control de recalls",
+    "Control de recordatorios de citas",
+    "Agendas integradas sin software adicional",
+    "Gestión de bloqueos y disponibilidad",
+  ].includes(feature)
+}
+
+function getPanelLabel(feature: string) {
+  if (feature === "PANEL_BASICO") return "Panel de control básico, incluye:"
+  if (feature === "PANEL_PREMIUM") return "Panel premium completo, incluye:"
+  return feature
+}
 
 export default function BusinessPage() {
   return (
@@ -87,16 +109,16 @@ export default function BusinessPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <p className="mb-6 text-lg md:text-2xl font-light uppercase tracking-[0.35em] text-[#00dcff]">
-  MARTINA ASSISTANT BUSINESS
-</p>
+              MARTINA ASSISTANT BUSINESS
+            </p>
 
-<h1 className="mx-auto mb-4 max-w-4xl text-xl md:text-3xl font-medium leading-tight text-white/90">
-  Tu recepcionista virtual para negocios
-</h1>
+            <h1 className="mx-auto mb-4 max-w-4xl text-xl md:text-3xl font-medium leading-tight text-white/90">
+              Tu recepcionista virtual para negocios
+            </h1>
 
-<p className="mx-auto max-w-2xl text-sm md:text-base leading-relaxed text-white/55">
-  Elige el plan que mejor se adapta a las necesidades de tu negocio.
-</p>
+            <p className="mx-auto max-w-2xl text-sm md:text-base leading-relaxed text-white/55">
+              Elige el plan que mejor se adapta a las necesidades de tu negocio.
+            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
@@ -113,23 +135,11 @@ export default function BusinessPage() {
                   Desde
                 </p>
 
-                <div className="mb-4 mt-2">
+                <div className="mb-6 mt-2">
                   <span className="text-3xl font-semibold text-white">
                     {plan.monthly}
                   </span>
                   <span className="ml-2 text-sm text-white/50">+ IVA</span>
-                </div>
-
-                <div className="mb-6 rounded-2xl border border-[#00dcff]/20 bg-[#00dcff]/[0.06] p-4">
-                  <p className="text-sm text-white/55">
-                    Creación personalizada desde
-                  </p>
-                  <p className="mt-1 text-xl font-semibold text-[#00dcff]">
-                    {plan.setup} + IVA
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/40">
-                    Pago único
-                  </p>
                 </div>
 
                 <p className="mb-6 text-sm leading-relaxed text-white/60">
@@ -137,12 +147,52 @@ export default function BusinessPage() {
                 </p>
 
                 <div className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <div key={feature} className="flex gap-3 text-sm text-white/70">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#00dcff]" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+                  {plan.features.map((feature) => {
+                    if (isPanelTitle(feature)) {
+                      return (
+                        <div
+                          key={feature}
+                          className="mt-5 border-l border-[#00dcff]/30 pl-4"
+                        >
+                          <span className="text-sm font-medium text-white/80">
+                            {getPanelLabel(feature)}
+                          </span>
+                        </div>
+                      )
+                    }
+
+                    const subItem = isPanelSubItem(feature)
+
+                    return (
+                      <div
+                        key={feature}
+                        className={`flex ${
+                          subItem
+                            ? "ml-6 gap-2 text-xs text-white/55"
+                            : "gap-3 text-sm text-white/70"
+                        }`}
+                      >
+                        <Check
+                          className={`mt-0.5 shrink-0 text-[#00dcff] ${
+                            subItem ? "h-3 w-3" : "h-4 w-4"
+                          }`}
+                        />
+                        <span>{feature}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-8 rounded-2xl border border-[#00dcff]/20 bg-[#00dcff]/[0.04] p-4">
+                  <p className="text-sm text-white/55">
+                    Creación personalizada desde
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-[#00dcff]">
+                    {plan.setup} + IVA
+                  </p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/40">
+                    Pago único
+                  </p>
                 </div>
               </div>
             ))}
