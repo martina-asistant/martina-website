@@ -175,7 +175,7 @@ export default function InfoPage() {
                             className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
                           >
                             <Mail className="h-4 w-4 text-[#00dcff]" />
-                            <span>Email</span>
+                            <span>martinaassistant22@gmail.com</span>
                           </a>
 
                           <a
