@@ -115,7 +115,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
           >
-            @martina_assistant
+           Síguenos en Instagram - @martina_assistant
           </a>
         </motion.div>
       </div>
