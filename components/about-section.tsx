@@ -54,8 +54,8 @@ export function AboutSection() {
               delay: index * 0.18,
             }}
           >
-            <span className="absolute left-1/2 top-1/2 h-px w-9 -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-90 blur-[0.2px]" />
-            <span className="absolute left-1/2 top-1/2 h-9 w-px -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-90 blur-[0.2px]" />
+            <span className="absolute left-1/2 top-1/2 h-px w-9 -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-100 blur-sm" />
+            <span className="absolute left-1/2 top-1/2 h-9 w-px -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-100 blur-sm" />
           </motion.div>
         ))}
       </div>
