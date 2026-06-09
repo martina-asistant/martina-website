@@ -137,6 +137,16 @@ export default function Home() {
   }
 }, [])
 
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search)
+
+  if (params.get("entered") === "1") {
+    setShowMainContent(true)
+
+    window.history.replaceState({}, "", "/")
+  }
+}, [])
+
   const handleCloseBooking = useCallback(() => {
     setShowBookingModal(false)
     resetBooking()
