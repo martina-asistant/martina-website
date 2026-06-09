@@ -58,7 +58,7 @@ export function Footer() {
           >
             <h4 className="text-foreground font-medium mb-3">Empresa</h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <a
                   href="/info#quienes-somos"
