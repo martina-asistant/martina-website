@@ -4,10 +4,6 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 export function Footer() {
-  const openSolutions = () => {
-    window.location.href = "/#soluciones"
-  }
-
   return (
     <footer className="relative py-16 border-t border-border/30">
       <div
@@ -18,7 +14,7 @@ export function Footer() {
       />
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
           <motion.div
             className="md:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -58,70 +54,44 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-          >
-            <h4 className="text-foreground font-medium mb-4">Producto</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="/#about" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
-                  Qué es Martina
-                </a>
-              </li>
-              <li>
-                <a href="/#capabilities" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
-                  Funcionalidades
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={openSolutions}
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300 text-left"
-                >
-                  Planes y precios
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={openSolutions}
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300 text-left"
-                >
-                  Soluciones
-                </button>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <h4 className="text-foreground font-medium mb-4">Empresa</h4>
+
             <ul className="space-y-3">
               <li>
-                <a href="/info#sobre-martina" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
-                  Sobre Martina
+                <a
+                  href="/info#quienes-somos"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                >
+                  ¿Quiénes somos?
                 </a>
               </li>
+
               <li>
-                <a href="mailto:martinaassistant22@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                <a
+                  href="mailto:martinaassistant22@gmail.com"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                >
                   Contacto
                 </a>
               </li>
+
               <li>
-                <a href="/info#aviso-legal" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                <a
+                  href="/info#aviso-legal"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                >
                   Aviso legal
                 </a>
               </li>
+
               <li>
-                <a href="/info#privacidad" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
-                  Privacidad
-                </a>
-              </li>
-              <li>
-                <a href="/info#cookies" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
-                  Cookies
+                <a
+                  href="/info#privacidad"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                >
+                  Privacidad & Cookies
                 </a>
               </li>
             </ul>
@@ -140,12 +110,12 @@ export function Footer() {
           </p>
 
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/martina_assistant/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
           >
-            Síguenos en Instagram
+            @martina_assistant
           </a>
         </motion.div>
       </div>
