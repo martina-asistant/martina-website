@@ -70,7 +70,7 @@ export function Footer() {
 
               <li>
                 <a
-                  href="mailto:martinaassistant22@gmail.com"
+                  href="/info#contacto"
                   className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
                 >
                   Contacto
