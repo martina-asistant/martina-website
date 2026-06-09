@@ -19,36 +19,38 @@ export function AboutSection() {
         }}
       />
 
-      {/* Visible particles */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        {[
-          'top-[8%] left-[60%]',
-          'top-[16%] left-[79%]',
-          'top-[36%] left-[72%]',
-          'top-[58%] left-[96%]',
-          'top-[78%] left-[53%]',
-          'top-[82%] left-[12%]',
-          'top-[66%] left-[4%]',
-          'top-[22%] left-[26%]',
-          'top-[12%] left-[88%]',
-          'top-[88%] left-[97%]',
-        ].map((pos, index) => (
-          <motion.span
-            key={index}
-            className={`absolute ${pos} h-1.5 w-1.5 rounded-full bg-[#00dcff] shadow-[0_0_18px_rgba(0,220,255,0.95)]`}
-            animate={{
-              opacity: [0.25, 1, 0.25],
-              scale: [0.8, 1.6, 0.8],
-            }}
-            transition={{
-              duration: 2.8 + index * 0.25,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: index * 0.35,
-            }}
-          />
-        ))}
-      </div>
+     {/* Visible particles */}
+<div className="absolute inset-0 -z-10 pointer-events-none">
+  {[
+    'top-[6%] left-[60%]',
+    'top-[12%] left-[79%]',
+    'top-[20%] left-[88%]',
+    'top-[34%] left-[72%]',
+    'top-[48%] left-[91%]',
+    'top-[58%] left-[96%]',
+    'top-[68%] left-[74%]',
+    'top-[76%] left-[53%]',
+    'top-[80%] left-[12%]',
+    'top-[64%] left-[4%]',
+    'top-[24%] left-[26%]',
+    'top-[88%] left-[97%]',
+  ].map((pos, index) => (
+    <motion.span
+      key={index}
+      className={`absolute ${pos} h-2 w-2 rounded-full bg-[#00dcff] shadow-[0_0_25px_rgba(0,220,255,1)]`}
+      animate={{
+        opacity: [0.35, 1, 0.35],
+        scale: [0.7, 2.1, 0.7],
+      }}
+      transition={{
+        duration: 2.2 + index * 0.18,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: index * 0.22,
+      }}
+    />
+  ))}
+</div>
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
