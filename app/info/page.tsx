@@ -108,12 +108,12 @@ export default function InfoPage() {
           {/* Volver */}
 <div className="flex justify-end mb-8">
   <Link
-    href="/"
-    className="group inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-[#00dcff]/45 hover:text-foreground hover:shadow-[0_0_24px_rgba(0,220,255,0.22)]"
-  >
-    <ArrowLeft className="h-4 w-4 text-[#00dcff] transition-transform duration-300 group-hover:-translate-x-1" />
-    <span>Volver</span>
-  </Link>
+  href="/?entered=1"
+  className="group inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-[#00dcff]/45 hover:text-foreground hover:shadow-[0_0_24px_rgba(0,220,255,0.22)]"
+>
+  <ArrowLeft className="h-4 w-4 text-[#00dcff] transition-transform duration-300 group-hover:-translate-x-1" />
+  <span>Volver</span>
+</Link>
 </div>
 
           {/* Cabecera */}
