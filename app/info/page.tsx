@@ -169,7 +169,9 @@ export default function InfoPage() {
                       {section.contact && (
                         <div className="pt-3 flex flex-col items-center gap-3 text-center">
                           <a
-                            href="mailto:martinaassistant22@gmail.com"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=martinaassistant22@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
                           >
                             <Mail className="h-4 w-4 text-[#00dcff]" />
