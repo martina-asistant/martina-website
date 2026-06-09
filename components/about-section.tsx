@@ -37,10 +37,10 @@ export function AboutSection() {
             className={`absolute ${pos} h-2 w-2 rounded-full bg-white`}
             style={{
               boxShadow: `
-                0 0 12px rgba(255,255,255,1),
-  0 0 40px rgba(0,220,255,1),
-  0 0 90px rgba(0,220,255,1),
-  0 0 160px rgba(0,220,255,0.85)
+                 0 0 15px rgba(255,255,255,1),
+  0 0 60px rgba(0,220,255,1),
+  0 0 120px rgba(0,220,255,1),
+  0 0 220px rgba(0,220,255,0.9)
               `,
             }}
             animate={{
