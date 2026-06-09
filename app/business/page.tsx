@@ -16,6 +16,7 @@ const plans = [
       "Modificación de citas",
       "Cancelación de citas",
       "Gestión de recados",
+      "Recordatorios de cita",
       "Información básica del negocio",
       "Integración con Google Calendar",
     ],
@@ -223,7 +224,7 @@ export default function BusinessPage() {
             <button
               type="button"
               onClick={() => {
-                window.location.href = "/"
+                window.location.href = "/?booking=1"
               }}
               className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-9 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.65)]"
               style={{
