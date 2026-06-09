@@ -181,7 +181,7 @@ export default function BusinessPage() {
                   "0 0 35px rgba(0,220,255,0.38), inset 0 0 0 1px rgba(0,220,255,0.15)",
               }}
             >
-              Reservar demo
+              Agendar reunión
             </button>
           </div>
         </div>
