@@ -37,7 +37,7 @@ export function AboutSection() {
   ].map((pos, index) => (
     <motion.span
       key={index}
-      className={`absolute ${pos} h-2 w-2 rounded-full bg-[#00dcff] shadow-[0_0_25px_rgba(0,220,255,1)]`}
+      className={`absolute ${pos} h-3 w-3 rounded-full bg-[#8ef4ff] shadow-[0_0_80px_rgba(0,220,255,1),0_0_120px_rgba(0,220,255,0.9),0_0_160px_rgba(0,220,255,0.7)]`}
       animate={{
         opacity: [0.35, 1, 0.35],
         scale: [0.7, 2.1, 0.7],
