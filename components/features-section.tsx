@@ -43,7 +43,7 @@ export function FeaturesSection() {
   const [showSolutions, setShowSolutions] = useState(false)
 
   return (
-    <section id="features" className="relative py-24 md:py-32">
+    <section id="features" className="relative py-16 md:py-20">
       <div 
         className="absolute inset-0 -z-10"
         style={{
