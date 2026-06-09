@@ -5,14 +5,15 @@ import Image from 'next/image'
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative pt-10 pb-24 md:pt-12 md:pb-32">
+    <section id="about" className="relative pt-10 pb-12 md:pt-12 md:pb-16">
       {/* Ambient background */}
       <div
         className="absolute inset-0 -z-10"
         style={{
           background: `
-            radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0, 220, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 180, 220, 0.03) 0%, transparent 50%)
+            radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0, 220, 255, 0.09) 0%, transparent 52%),
+            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 180, 220, 0.06) 0%, transparent 52%),
+            radial-gradient(circle at 72% 62%, rgba(0, 220, 255, 0.10) 0%, transparent 18%)
           `
         }}
       />
@@ -30,17 +31,17 @@ export function AboutSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               {/* Soft ambient glow */}
               <div
-                className="absolute inset- rounded-full"
+                className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.16) 0%, transparent 62%)'
+                  background: 'radial-gradient(circle at center, rgba(0, 220, 255, 0.18) 0%, transparent 62%)'
                 }}
               />
 
               {/* Static halo with breathing glow */}
               <motion.div
-               className="absolute inset-[60px] rounded-full"
+                className="absolute inset-[60px] rounded-full"
                 style={{
-                 border: '2.5px solid rgba(0, 220, 255, 0.75)',
+                  border: '2.5px solid rgba(0, 220, 255, 0.75)',
                 }}
                 animate={{
                   boxShadow: [
@@ -50,9 +51,9 @@ export function AboutSection() {
                       inset 0 0 25px rgba(0, 220, 255, 0.05)
                     `,
                     `
-                      0 0 70px rgba(0, 220, 255, 0.55),
-                      0 0 140px rgba(0, 220, 255, 0.28),
-                      inset 0 0 40px rgba(0, 220, 255, 0.10)
+                      0 0 75px rgba(0, 220, 255, 0.58),
+                      0 0 150px rgba(0, 220, 255, 0.30),
+                      inset 0 0 42px rgba(0, 220, 255, 0.12)
                     `,
                     `
                       0 0 25px rgba(0, 220, 255, 0.18),
