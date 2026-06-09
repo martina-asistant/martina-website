@@ -37,14 +37,14 @@ export function AboutSection() {
             className={`absolute ${pos} h-2 w-2 rounded-full bg-white`}
             style={{
               boxShadow: `
-                0 0 8px rgba(255,255,255,1),
-                0 0 24px rgba(0,220,255,1),
-                0 0 58px rgba(0,220,255,0.95),
-                0 0 105px rgba(0,220,255,0.75)
+                0 0 12px rgba(255,255,255,1),
+                0 0 40px rgba(0,220,255,1),
+                0 0 90px rgba(0,220,255,1),
+                0 0 160px rgba(0,220,255,0.85)
               `,
             }}
             animate={{
-              opacity: [0.45, 1, 0.45],
+              : [0.45, 1, 0.45],
               scale: [1, 1.65, 1],
             }}
             transition={{
@@ -54,8 +54,8 @@ export function AboutSection() {
               delay: index * 0.18,
             }}
           >
-            <span className="absolute left-1/2 top-1/2 h-px w-9 -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-90 blur-[0.2px]" />
-            <span className="absolute left-1/2 top-1/2 h-9 w-px -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-90 blur-[0.2px]" />
+            <span className="absolute left-1/2 top-1/2 h-px w-9 -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-100 blur-[0.2px]" />
+            <span className="absolute left-1/2 top-1/2 h-9 w-px -translate-x-1/2 -translate-y-1/2 bg-[#00dcff] opacity-100 blur-[0.2px]" />
           </motion.div>
         ))}
       </div>
