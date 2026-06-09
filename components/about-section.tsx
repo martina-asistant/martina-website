@@ -39,8 +39,8 @@ export function AboutSection() {
       key={index}
       className={`absolute ${pos} h-3 w-3 rounded-full bg-[#8ef4ff] shadow-[0_0_80px_rgba(0,220,255,1),0_0_120px_rgba(0,220,255,0.9),0_0_160px_rgba(0,220,255,0.7)]`}
       animate={{
-        opacity: [0.35, 1, 0.35],
-        scale: [0.7, 2.1, 0.7],
+        opacity: [0.5, 1, 0.5],
+        scale: [0.8, 2.2, 0.8],
       }}
       transition={{
         duration: 2.2 + index * 0.18,
