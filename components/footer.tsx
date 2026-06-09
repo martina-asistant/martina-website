@@ -40,7 +40,7 @@ export function Footer() {
               </div>
 
               <div className="text-xl font-semibold tracking-tight">
-                <span className="text-primary">Martina</span>
+                <span className="text-[#00dcff]">Martina</span>
                 <span className="text-muted-foreground font-normal ml-1">Assistant</span>
               </div>
             </div>
@@ -62,7 +62,7 @@ export function Footer() {
               <li>
                 <a
                   href="/info#quienes-somos"
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
                 >
                   ¿Quiénes somos?
                 </a>
@@ -71,7 +71,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:martinaassistant22@gmail.com"
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
                 >
                   Contacto
                 </a>
@@ -80,7 +80,7 @@ export function Footer() {
               <li>
                 <a
                   href="/info#aviso-legal"
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
                 >
                   Aviso legal
                 </a>
@@ -89,7 +89,7 @@ export function Footer() {
               <li>
                 <a
                   href="/info#privacidad"
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
                 >
                   Privacidad & Cookies
                 </a>
@@ -113,7 +113,7 @@ export function Footer() {
             href="https://www.instagram.com/martina_assistant/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+            className="text-muted-foreground text-sm hover:text-[#00dcff]/80 transition-colors duration-300"
           >
            Síguenos en Instagram - @martina_assistant
           </a>
