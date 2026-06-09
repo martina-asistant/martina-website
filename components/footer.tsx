@@ -1,22 +1,24 @@
 "use client"
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 export function Footer() {
+  const openSolutions = () => {
+    window.location.href = "/#soluciones"
+  }
+
   return (
     <footer className="relative py-16 border-t border-border/30">
-      {/* Background accent */}
-      <div 
+      <div
         className="absolute inset-0 -z-10"
         style={{
-          background: 'linear-gradient(180deg, transparent 0%, rgba(0, 220, 255, 0.02) 100%)'
+          background: "linear-gradient(180deg, transparent 0%, rgba(0, 220, 255, 0.02) 100%)",
         }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
           <motion.div
             className="md:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -25,11 +27,11 @@ export function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div 
+              <div
                 className="w-10 h-10 rounded-full overflow-hidden"
                 style={{
-                  border: '1px solid rgba(0, 220, 255, 0.3)',
-                  boxShadow: '0 0 15px rgba(0, 220, 255, 0.2)',
+                  border: "1px solid rgba(0, 220, 255, 0.3)",
+                  boxShadow: "0 0 15px rgba(0, 220, 255, 0.2)",
                 }}
               >
                 <Image
@@ -40,17 +42,18 @@ export function Footer() {
                   className="object-cover object-top scale-125"
                 />
               </div>
+
               <div className="text-xl font-semibold tracking-tight">
                 <span className="text-primary">Martina</span>
                 <span className="text-muted-foreground font-normal ml-1">Assistant</span>
               </div>
             </div>
+
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              Automatiza la gestión de tu negocio con inteligencia artificial. Martina responde, organiza y acompaña mientras tú te centras en crecer.
+              Automatiza la gestión de tu negocio con inteligencia artificial sin perder la cercanía que hace única tu atención.
             </p>
           </motion.div>
 
-          {/* Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,16 +62,32 @@ export function Footer() {
           >
             <h4 className="text-foreground font-medium mb-4">Producto</h4>
             <ul className="space-y-3">
-              {["Características", "Precios", "Integraciones", "API"].map((item) => (
-                <li key={item}>
-                  <a 
-                    href="#" 
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/#about" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Qué es Martina
+                </a>
+              </li>
+              <li>
+                <a href="/#capabilities" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Funcionalidades
+                </a>
+              </li>
+              <li>
+                <button
+                  onClick={openSolutions}
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300 text-left"
+                >
+                  Planes y precios
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={openSolutions}
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300 text-left"
+                >
+                  Soluciones
+                </button>
+              </li>
             </ul>
           </motion.div>
 
@@ -80,21 +99,35 @@ export function Footer() {
           >
             <h4 className="text-foreground font-medium mb-4">Empresa</h4>
             <ul className="space-y-3">
-              {["Sobre nosotros", "Contacto", "Privacidad"].map((item) => (
-                <li key={item}>
-                  <a 
-                    href="#" 
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/info#sobre-martina" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Sobre Martina
+                </a>
+              </li>
+              <li>
+                <a href="mailto:martinaassistant22@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Contacto
+                </a>
+              </li>
+              <li>
+                <a href="/info#aviso-legal" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Aviso legal
+                </a>
+              </li>
+              <li>
+                <a href="/info#privacidad" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Privacidad
+                </a>
+              </li>
+              <li>
+                <a href="/info#cookies" className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300">
+                  Cookies
+                </a>
+              </li>
             </ul>
           </motion.div>
         </div>
 
-        {/* Bottom */}
         <motion.div
           className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/30 gap-4"
           initial={{ opacity: 0 }}
@@ -106,18 +139,14 @@ export function Footer() {
             © {new Date().getFullYear()} Martina Assistant. Todos los derechos reservados.
           </p>
 
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            {["Twitter", "LinkedIn", "Instagram"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-              >
-                {social}
-              </a>
-            ))}
-          </div>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+          >
+            Síguenos en Instagram
+          </a>
         </motion.div>
       </div>
     </footer>
