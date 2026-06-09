@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ArrowLeft, Building2, Mail, Instagram, ShieldCheck, Cookie, Sparkles } from "lucide-react"
+import {
+  ArrowLeft,
+  Building2,
+  Phone,
+  Mail,
+  Instagram,
+  ShieldCheck,
+  Cookie,
+} from "lucide-react"
 
 const sections = [
   {
@@ -18,7 +26,7 @@ const sections = [
   {
     id: "contacto",
     title: "Contacto",
-    icon: Mail,
+    icon: Phone,
     contact: true,
     content: [
       "Para solicitar información, resolver dudas o conocer cómo Martina puede adaptarse a tu negocio, puedes contactar a través de los siguientes canales:",
@@ -48,7 +56,7 @@ const sections = [
 export default function InfoPage() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-hidden">
-      <section className="relative min-h-screen py-8 md:py-10">
+      <section className="relative min-h-screen py-7 md:py-9">
         {/* Fondo Martina */}
         <div
           className="absolute inset-0 -z-10"
@@ -78,12 +86,12 @@ export default function InfoPage() {
               style={{
                 boxShadow: `
                   0 0 8px rgba(255,255,255,1),
-                  0 0 24px rgba(0,220,255,0.95),
-                  0 0 58px rgba(0,220,255,0.65)
+                  0 0 40px rgba(0,220,255,1),
+                  0 0 90px rgba(0,220,255,0.85)
                 `,
               }}
               animate={{
-                opacity: [0.35, 1, 0.35],
+                opacity: [0.55, 1, 0.55],
                 scale: [1, 1.55, 1],
               }}
               transition={{
@@ -98,21 +106,19 @@ export default function InfoPage() {
 
         <div className="max-w-4xl mx-auto px-6">
           {/* Volver */}
-          <div className="flex justify-end mb-10">
+          <div className="flex justify-end mb-8">
             <Link
               href="/"
-              className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#00dcff]/25 px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-[#00dcff]/70 hover:text-white hover:shadow-[0_0_30px_rgba(0,220,255,0.25)]"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-transparent transition-all duration-300 group-hover:border-[#00dcff]/45 group-hover:shadow-[0_0_22px_rgba(0,220,255,0.22)]">
-                <ArrowLeft className="h-4 w-4" />
-              </span>
-              Volver
+              <ArrowLeft className="h-4 w-4 text-[#00dcff] transition-transform duration-300 group-hover:-translate-x-1" />
+              <span>Volver</span>
             </Link>
           </div>
 
           {/* Cabecera */}
           <motion.div
-            className="mb-9"
+            className="mb-8"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
@@ -121,14 +127,14 @@ export default function InfoPage() {
               Empresa
             </p>
 
-            <p className="max-w-2xl text-muted-foreground text-sm md:text-base leading-relaxed">
+            <p className="max-w-2xl text-muted-foreground text-sm leading-relaxed">
               Toda la información sobre Martina Assistant, nuestras formas de contacto,
               políticas de privacidad, cookies y documentación legal.
             </p>
           </motion.div>
 
           {/* Cajas */}
-          <div className="space-y-5">
+          <div className="space-y-4">
             {sections.map((section, index) => {
               const Icon = section.icon
 
@@ -136,7 +142,7 @@ export default function InfoPage() {
                 <motion.section
                   key={section.id}
                   id={section.id}
-                  className="scroll-mt-24 relative rounded-2xl border border-[#00dcff]/20 bg-[#02141a]/60 p-5 md:p-6 backdrop-blur-md shadow-[0_0_32px_rgba(0,220,255,0.06)] transition-all duration-300 hover:border-[#00dcff]/45 hover:shadow-[0_0_42px_rgba(0,220,255,0.13)]"
+                  className="scroll-mt-24 relative rounded-2xl border border-[#00dcff]/20 bg-[#02141a]/60 p-4 md:p-5 backdrop-blur-md shadow-[0_0_28px_rgba(0,220,255,0.055)] transition-all duration-300 hover:border-[#00dcff]/45 hover:shadow-[0_0_38px_rgba(0,220,255,0.12)]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -145,42 +151,38 @@ export default function InfoPage() {
                   <div className="absolute inset-0 rounded-2xl bg-[#00dcff]/[0.018]" />
 
                   <div className="relative">
-                    <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#00dcff]/30 bg-[#00dcff]/5 shadow-[0_0_20px_rgba(0,220,255,0.10)]">
-                        <Icon className="h-4.5 w-4.5 text-[#00dcff]" />
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#00dcff]/30 bg-[#00dcff]/5 shadow-[0_0_18px_rgba(0,220,255,0.10)]">
+                        <Icon className="h-4 w-4 text-[#00dcff]" />
                       </div>
 
-                      <h2 className="text-lg md:text-xl font-semibold text-foreground">
+                      <h2 className="text-base md:text-lg font-semibold text-foreground">
                         {section.title}
                       </h2>
                     </div>
 
-                    <div className="space-y-3 text-sm md:text-[15px] text-muted-foreground leading-relaxed">
+                    <div className="space-y-2.5 text-sm text-muted-foreground leading-relaxed">
                       {section.content.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
 
                       {section.contact && (
-                        <div className="pt-2 space-y-3">
+                        <div className="pt-3 flex flex-col items-center gap-3 text-center">
                           <a
                             href="mailto:martinaassistant22@gmail.com"
-                            className="flex items-center gap-3 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
+                            className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
                           >
-                            <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#00dcff]/25 bg-[#00dcff]/5">
-                              <Mail className="h-4 w-4 text-[#00dcff]" />
-                            </span>
-                            <span>martinaassistant22@gmail.com</span>
+                            <Mail className="h-4 w-4 text-[#00dcff]" />
+                            <span>Email</span>
                           </a>
 
                           <a
                             href="https://www.instagram.com/martina_assistant/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
+                            className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#00dcff] transition-colors duration-300"
                           >
-                            <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#00dcff]/25 bg-[#00dcff]/5">
-                              <Instagram className="h-4 w-4 text-[#00dcff]" />
-                            </span>
+                            <Instagram className="h-4 w-4 text-[#00dcff]" />
                             <span>@martina_assistant</span>
                           </a>
                         </div>
