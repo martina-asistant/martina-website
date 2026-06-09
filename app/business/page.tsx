@@ -86,17 +86,17 @@ export default function BusinessPage() {
 
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
-            <p className="mb-4 text-sm font-light uppercase tracking-[0.4em] text-[#00dcff]">
-              MARTINA ASSISTANT BUSINESS
-            </p>
+            <p className="mb-6 text-lg md:text-2xl font-light uppercase tracking-[0.35em] text-[#00dcff]">
+  MARTINA ASSISTANT BUSINESS
+</p>
 
-            <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
-              Tu recepcionista virtual para negocios
-            </h1>
+<h1 className="mx-auto mb-4 max-w-4xl text-xl md:text-3xl font-medium leading-tight text-white/90">
+  Tu recepcionista virtual para negocios
+</h1>
 
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
-              Automatiza llamadas, WhatsApp, citas, recordatorios y tareas administrativas desde una solución creada a medida para tu negocio.
-            </p>
+<p className="mx-auto max-w-2xl text-sm md:text-base leading-relaxed text-white/55">
+  Elige el plan que mejor se adapta a las necesidades de tu negocio.
+</p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
