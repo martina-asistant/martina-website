@@ -106,15 +106,15 @@ export default function InfoPage() {
 
         <div className="max-w-4xl mx-auto px-6">
           {/* Volver */}
-          <div className="flex justify-end mb-8">
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#00dcff]/25 px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-[#00dcff]/70 hover:text-white hover:shadow-[0_0_30px_rgba(0,220,255,0.25)]"
-            >
-              <ArrowLeft className="h-4 w-4 text-[#00dcff] transition-transform duration-300 group-hover:-translate-x-1" />
-              <span>Volver</span>
-            </Link>
-          </div>
+<div className="flex justify-end mb-8">
+  <Link
+    href="/"
+    className="group inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:border-[#00dcff]/45 hover:text-foreground hover:shadow-[0_0_24px_rgba(0,220,255,0.22)]"
+  >
+    <ArrowLeft className="h-4 w-4 text-[#00dcff] transition-transform duration-300 group-hover:-translate-x-1" />
+    <span>Volver</span>
+  </Link>
+</div>
 
           {/* Cabecera */}
           <motion.div
