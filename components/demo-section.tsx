@@ -35,7 +35,7 @@ export function DemoSection() {
   }, [isInView])
 
   return (
-    <section id="demo" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="demo" className="relative py-16 md:py-20 overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0 -z-10"
