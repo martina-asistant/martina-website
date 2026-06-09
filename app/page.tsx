@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { ArrowLeft, X } from 'lucide-react'
 import { HeroSection } from '@/components/hero-section'
 import { PortalTransition } from '@/components/portal-transition'
@@ -125,6 +125,17 @@ export default function Home() {
   const handleOpenBooking = useCallback(() => {
     setShowBookingModal(true)
   }, [])
+  
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search)
+
+  if (params.get("booking") === "1") {
+    setShowMainContent(true)
+    setShowBookingModal(true)
+
+    window.history.replaceState({}, "", "/")
+  }
+}, [])
 
   const handleCloseBooking = useCallback(() => {
     setShowBookingModal(false)
