@@ -56,9 +56,9 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <h4 className="text-foreground font-medium mb-4">Empresa</h4>
+            <h4 className="text-foreground font-medium mb-3">Empresa</h4>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <a
                   href="/info#quienes-somos"
