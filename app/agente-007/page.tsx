@@ -86,7 +86,7 @@ export default function Agente007Page() {
             <p className="mx-auto max-w-2xl text-sm md:text-base leading-relaxed text-white/55">
               Planes diseñados para profesionales que quieren atender llamadas, gestionar citas y no perder oportunidades mientras trabajan.
             </p>
-
+            </div>
             
           <div className="grid gap-6 lg:grid-cols-3">
             {plans.map((plan) => (
