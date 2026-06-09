@@ -38,13 +38,13 @@ export function AboutSection() {
             style={{
               boxShadow: `
                 0 0 12px rgba(255,255,255,1),
-                0 0 40px rgba(0,220,255,1),
-                0 0 90px rgba(0,220,255,1),
-                0 0 160px rgba(0,220,255,0.85)
+  0 0 40px rgba(0,220,255,1),
+  0 0 90px rgba(0,220,255,1),
+  0 0 160px rgba(0,220,255,0.85)
               `,
             }}
             animate={{
-              : [0.45, 1, 0.45],
+              opacity: [0.45, 1, 0.45],
               scale: [1, 1.65, 1],
             }}
             transition={{
