@@ -8,6 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter"
 });
+
 const geistMono = Geist_Mono({ 
   subsets: ["latin"],
   variable: "--font-mono"
@@ -18,11 +19,10 @@ export const metadata: Metadata = {
   description: 'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
   generator: 'v0.app',
   icons: {
-  icon: '/apple-icon.png',
-  apple: '/apple-icon.png',
+    icon: '/apple-icon.png',
+    apple: '/apple-icon.png',
   },
 }
-
 
 export const viewport: Viewport = {
   themeColor: '#0d1117',
@@ -36,18 +36,35 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-background">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
-  {process.env.NODE_ENV === 'production' && (
-    <Script
-      id="cookieyes"
-      src="https://cdn-cookieyes.com/client_data/cacc55662f1fa128ae88f74acf5a8e67/script.js"
-      strategy="beforeInteractive"
-    />
-  )}
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            id="cookieyes"
+            src="https://cdn-cookieyes.com/client_data/cacc55662f1fa128ae88f74acf5a8e67/script.js"
+            strategy="beforeInteractive"
+          />
+        )}
 
-  {children}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-8XT7T0MBLB"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-8XT7T0MBLB');
+              `}
+            </Script>
+          </>
+        )}
 
-  {process.env.NODE_ENV === 'production' && <Analytics />}
-</body>
+        {children}
+
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
     </html>
   )
 }
