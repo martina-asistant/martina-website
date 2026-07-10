@@ -51,6 +51,16 @@ const sections = [
       "Martina Assistant utiliza inteligencia artificial para automatizar tareas como la gestión de llamadas, mensajes, citas y consultas. Cuando una persona interactúe con Martina, se procurará informar de forma clara de que está comunicándose con un sistema automatizado.",
     ],
   },
+  {
+    id: "eliminacion-datos",
+    title: "Eliminación de datos",
+    icon: Trash2,
+    content: [
+      "Las personas usuarias pueden solicitar la eliminación de los datos personales vinculados a Martina Assistant en cualquier momento.",
+      "Para realizar la solicitud, deberá enviarse un correo electrónico a martinaassistant22@gmail.com indicando en el asunto “Solicitud de eliminación de datos” e incluyendo la información necesaria para identificar los datos que se desean eliminar.",
+      "La solicitud será revisada y atendida conforme al Reglamento General de Protección de Datos y demás normativa aplicable. Cuando proceda, los datos serán eliminados de los sistemas utilizados para prestar el servicio, salvo aquellos que deban conservarse por obligación legal.",
+    ],
+  },
 ]
 
 export default function InfoPage() {
