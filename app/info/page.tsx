@@ -10,6 +10,7 @@ import {
   Instagram,
   ShieldCheck,
   Cookie,
+  Trash2,
 } from "lucide-react"
 
 const sections = [
