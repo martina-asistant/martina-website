@@ -159,6 +159,64 @@ export function FeaturesSection() {
         </div>
       </div>
 
+      <motion.div
+  className="mt-6"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.7 }}
+>
+  <div
+    className="group relative overflow-hidden rounded-[1.6rem] border border-[#00dcff]/30 px-7 py-7 md:px-10 md:py-8"
+    style={{
+      background:
+        "linear-gradient(135deg, rgba(0,220,255,0.10) 0%, rgba(2,20,26,0.92) 42%, rgba(15,23,42,0.88) 100%)",
+      boxShadow:
+        "0 0 45px rgba(0,220,255,0.10), inset 0 0 40px rgba(0,220,255,0.025)",
+    }}
+  >
+    <div
+      className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-30"
+      style={{
+        background:
+          "radial-gradient(circle at 78% 45%, rgba(0,220,255,0.30) 0%, transparent 48%)",
+      }}
+    />
+
+    <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div className="max-w-3xl">
+        <span className="mb-3 block text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
+          Servicio especial
+        </span>
+
+        <h3 className="mb-3 text-xl font-semibold text-white md:text-2xl">
+          Tarjetas de visita inteligentes con QR
+        </h3>
+
+        <p className="max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+          Convierte tu tarjeta de visita en una puerta directa a tu agenda.
+          Diseñamos tarjetas personalizadas con código QR para que tus clientes
+          puedan pedir cita desde el móvil.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => {
+          window.location.href = "/tarjetas-qr"
+        }}
+        className="shrink-0 rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
+        style={{
+          boxShadow:
+            "0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)",
+        }}
+      >
+        Descubrir servicio
+      </button>
+    </div>
+  </div>
+</motion.div>
+
       {showSolutions && (
         <div className="fixed inset-0 z-[300] overflow-y-auto bg-black/75 backdrop-blur-md">
           <button
