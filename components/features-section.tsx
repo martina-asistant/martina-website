@@ -8,7 +8,8 @@ import {
   Bell, 
   HelpCircle, 
   Bot,
-  ArrowRight
+  ArrowRight,
+  QrCode
 } from 'lucide-react'
 
 const features = [
@@ -157,65 +158,80 @@ export function FeaturesSection() {
             </div>
           </motion.div>
         </div>
+
+       <motion.div
+          className="group relative mt-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          <div 
+            className="relative p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:translate-y-[-2px] overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(0, 220, 255, 0.10) 0%, rgba(15, 23, 42, 0.78) 45%, rgba(15, 23, 42, 0.88) 100%)',
+              border: '1px solid rgba(0, 220, 255, 0.28)',
+              boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 220, 255, 0.08)',
+            }}
+          >
+            <div
+              className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-20"
+              style={{
+                background: 'radial-gradient(circle at 82% 50%, rgba(0,220,255,0.28) 0%, transparent 48%)'
+              }}
+            />
+
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-start gap-5">
+                <div 
+                  className="w-14 h-14 shrink-0 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,220,255,0.3)]"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 220, 255, 0.15) 0%, rgba(0, 180, 220, 0.05) 100%)',
+                    border: '1px solid rgba(0, 220, 255, 0.2)',
+                  }}
+                >
+                  <QrCode className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+
+                <div>
+                  <span className="text-[#00dcff] text-xs tracking-[0.35em] uppercase font-light mb-2 block">
+                    Servicio especial
+                  </span>
+
+                  <h3 className="text-lg md:text-xl font-medium text-foreground mb-2">
+                    Tarjetas de visita personalizadas con QR
+                  </h3>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+                    Diseñamos tarjetas de visita personalizadas con un código QR conectado a una página de reserva para que tus clientes puedan pedir cita directamente desde el móvil.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  window.location.href = "/tarjetas-qr"
+                }}
+                className="shrink-0 self-start md:self-center rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
+                style={{
+                  boxShadow: '0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)',
+                }}
+              >
+                Descubrir servicio
+              </button>
+            </div>
+
+            <div 
+              className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{
+                boxShadow: '0 0 40px rgba(0, 220, 255, 0.1), inset 0 0 40px rgba(0, 220, 255, 0.03)',
+              }}
+              aria-hidden="true"
+            />
+          </div>
+        </motion.div>
       </div>
-
-      <motion.div
-  className="mt-6"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.7 }}
->
-  <div
-    className="group relative overflow-hidden rounded-[1.6rem] border border-[#00dcff]/30 px-7 py-7 md:px-10 md:py-8"
-    style={{
-      background:
-        "linear-gradient(135deg, rgba(0,220,255,0.10) 0%, rgba(2,20,26,0.92) 42%, rgba(15,23,42,0.88) 100%)",
-      boxShadow:
-        "0 0 45px rgba(0,220,255,0.10), inset 0 0 40px rgba(0,220,255,0.025)",
-    }}
-  >
-    <div
-      className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-30"
-      style={{
-        background:
-          "radial-gradient(circle at 78% 45%, rgba(0,220,255,0.30) 0%, transparent 48%)",
-      }}
-    />
-
-    <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-      <div className="max-w-3xl">
-        <span className="mb-3 block text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
-          Servicio especial
-        </span>
-
-        <h3 className="mb-3 text-xl font-semibold text-white md:text-2xl">
-          Tarjetas de visita inteligentes con QR
-        </h3>
-
-        <p className="max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
-          Convierte tu tarjeta de visita en una puerta directa a tu agenda.
-          Diseñamos tarjetas personalizadas con código QR para que tus clientes
-          puedan pedir cita desde el móvil.
-        </p>
-      </div>
-
-      <button
-        type="button"
-        onClick={() => {
-          window.location.href = "/tarjetas-qr"
-        }}
-        className="shrink-0 rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
-        style={{
-          boxShadow:
-            "0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)",
-        }}
-      >
-        Descubrir servicio
-      </button>
-    </div>
-  </div>
-</motion.div>
 
       {showSolutions && (
         <div className="fixed inset-0 z-[300] overflow-y-auto bg-black/75 backdrop-blur-md">
