@@ -234,17 +234,13 @@ export function FeaturesSection() {
   onClick={() => {
     window.location.href = "/agente-007"
   }}
-  className="flex items-center gap-4 text-left"
+  className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
+  style={{
+    boxShadow:
+      "0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)",
+  }}
 >
-  <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#00dcff]/45 bg-[#00dcff]/10 shadow-[0_0_24px_rgba(0,220,255,0.25)]">
-    <div className="absolute inset-0 rounded-full border border-[#00dcff]/50 animate-ping" />
-    <div className="absolute inset-2 rounded-full border border-[#00dcff]/25" />
-    <div className="h-2.5 w-2.5 rounded-full bg-[#00dcff] shadow-[0_0_16px_rgba(0,220,255,0.9)]" />
-  </div>
-
-  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#00dcff]">
-    Próximamente
-  </p>
+  Saber más
 </button>
                    
                   </div>
