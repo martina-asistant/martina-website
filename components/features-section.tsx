@@ -210,18 +210,10 @@ export function FeaturesSection() {
 
               <button
   type="button"
-  className="
-    inline-flex items-center gap-3
-    text-[16px]
-    font-medium
-    text-cyan-400
-    transition-all
-    duration-300
-    hover:text-cyan-300
-  "
+  className="shrink-0 flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300 md:self-center"
 >
   <span>Descubrir</span>
-  <span className="text-[18px] leading-none">→</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
             </div>
 
