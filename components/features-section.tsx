@@ -209,17 +209,23 @@ export function FeaturesSection() {
               </div>
 
               <button
-                type="button"
-                onClick={() => {
-                  window.location.href = "/tarjetas-qr"
-                }}
-                className="shrink-0 self-start md:self-center rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(0,220,255,0.62)]"
-                style={{
-                  boxShadow: '0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)',
-                }}
-              >
-                Descubrir servicio
-              </button>
+  type="button"
+  className="
+    inline-flex items-center gap-2
+    bg-transparent
+    p-0
+    text-[16px]
+    font-medium
+    text-cyan-400
+    transition-all
+    duration-300
+    hover:text-cyan-300
+    hover:translate-x-[2px]
+  "
+>
+  <span>Descubrir</span>
+  <span className="text-[18px] leading-none">→</span>
+</button>
             </div>
 
             <div 
