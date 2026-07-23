@@ -211,17 +211,17 @@ export function FeaturesSection() {
               <button
   type="button"
   className="
-    self-center
     inline-flex items-center gap-3
-    bg-transparent p-0
-    text-[24px] font-medium
+    text-[16px]
+    font-medium
     text-cyan-400
-    transition-all duration-300
+    transition-all
+    duration-300
     hover:text-cyan-300
   "
 >
   <span>Descubrir</span>
-  <span className="text-[26px] leading-none">→</span>
+  <span className="text-[18px] leading-none">→</span>
 </button>
             </div>
 
