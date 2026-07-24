@@ -166,11 +166,11 @@ export default function TarjetasQrPage() {
               disponibilidad y pedir cita directamente desde el móvil.
             </p>
 
-            <div className="mt-7 flex flex-col items-start gap-4">
+            <div className="mt-7 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
               <button
                 type="button"
                 onClick={scrollToProcess}
-                className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.60)]"
+                className="rounded-full border-2 border-[#00dcff]/70 bg-[#f5f5f0] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.20em] text-[#1a1a2e] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_55px_rgba(0,220,255,0.60)]"
                 style={{
                   boxShadow:
                     "0 0 30px rgba(0,220,255,0.34), inset 0 0 0 1px rgba(0,220,255,0.15)",
@@ -182,10 +182,13 @@ export default function TarjetasQrPage() {
               <button
                 type="button"
                 onClick={openInformationForm}
-                className="group inline-flex items-center gap-2 text-sm font-medium text-[#00dcff] transition-all duration-300 hover:gap-3 hover:text-[#76efff]"
+                className="group inline-flex items-center gap-2 px-1 py-2 text-sm font-medium text-[#00dcff] transition-all duration-300 hover:gap-3 hover:text-[#76efff] hover:drop-shadow-[0_0_10px_rgba(0,220,255,0.55)]"
               >
                 Solicitar información
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  strokeWidth={1.8}
+                />
               </button>
             </div>
           </motion.div>
@@ -198,17 +201,16 @@ export default function TarjetasQrPage() {
           >
             <div className="absolute inset-[12%] rounded-full bg-[#00dcff]/10 blur-[85px]" />
 
-            <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/25 bg-[#06131b]/72 p-3 shadow-[0_0_65px_rgba(0,220,255,0.10)] backdrop-blur-md">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[1.35rem] bg-[#031017]">
-                <Image
-                  src="/images/tarjetas-qr/tarjetas-qr-servicio.png"
-                  alt="Tarjeta de visita personalizada con código QR y página de reserva"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-contain"
-                />
-              </div>
+            <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/25 bg-[#06131b]/72 p-2 shadow-[0_0_65px_rgba(0,220,255,0.10)] backdrop-blur-md">
+              <Image
+                src="/images/tarjetas-qr/tarjetas-qr-servicio.png"
+                alt="Tarjeta de visita personalizada con código QR y página de reserva"
+                width={1536}
+                height={1024}
+                priority
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="block h-auto w-full rounded-[1.35rem]"
+              />
             </div>
           </motion.div>
         </div>
@@ -311,16 +313,15 @@ export default function TarjetasQrPage() {
             >
               <div className="absolute inset-[15%] rounded-full bg-[#00dcff]/10 blur-[85px]" />
 
-              <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/20 bg-[#06131b]/72 p-3 shadow-[0_0_55px_rgba(0,220,255,0.09)]">
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[1.35rem] bg-[#031017]">
-                  <Image
-                    src="/images/tarjetas-qr/tarjetas-qr-detalle.png"
-                    alt="Diseño personalizado de tarjeta de visita con QR"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain"
-                  />
-                </div>
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/20 bg-[#06131b]/72 p-2 shadow-[0_0_55px_rgba(0,220,255,0.09)]">
+                <Image
+                  src="/images/tarjetas-qr/tarjetas-qr-detalle.png"
+                  alt="Diseño personalizado de tarjeta de visita con QR"
+                  width={1536}
+                  height={1024}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="block h-auto w-full rounded-[1.35rem]"
+                />
               </div>
             </motion.div>
           </div>
@@ -340,16 +341,15 @@ export default function TarjetasQrPage() {
             >
               <div className="absolute inset-[15%] rounded-full bg-[#00dcff]/10 blur-[85px]" />
 
-              <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/20 bg-[#06131b]/72 p-3 shadow-[0_0_55px_rgba(0,220,255,0.09)]">
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[1.35rem] bg-[#031017]">
-                  <Image
-                    src="/images/tarjetas-qr/tarjetas-qr-mantenimiento.png"
-                    alt="Mantenimiento técnico del sistema de reservas"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain"
-                  />
-                </div>
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-[#00dcff]/20 bg-[#06131b]/72 p-2 shadow-[0_0_55px_rgba(0,220,255,0.09)]">
+                <Image
+                  src="/images/tarjetas-qr/tarjetas-qr-mantenimiento.png"
+                  alt="Mantenimiento técnico del sistema de reservas"
+                  width={1536}
+                  height={1024}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="block h-auto w-full rounded-[1.35rem]"
+                />
               </div>
             </motion.div>
 
