@@ -262,12 +262,12 @@ export default function TarjetasQrPage() {
                 Servicio completo
               </span>
 
-              <h2 className="text-[2.35rem] font-semibold tracking-tight text-white md:text-[2.8rem]">
-                299 €{" "}
-                <span className="text-base font-normal text-white/40 md:text-lg">
-                  + IVA
-                </span>
-              </h2>
+              <h2 className="text-[1.9rem] font-semibold tracking-tight text-white md:text-[2.2rem]">
+  299 €{" "}
+  <span className="text-sm font-normal text-white/40 md:text-base">
+    + IVA
+  </span>
+</h2>
 
               <p className="mt-4 max-w-xl text-[13px] leading-[1.75] text-white/50 md:text-sm">
                 Cada solución se adapta a la imagen y necesidades de cada
@@ -374,13 +374,12 @@ export default function TarjetasQrPage() {
                 mes a mes.
               </p>
 
-              <p className="mt-6 text-[2.35rem] font-semibold text-white md:text-[2.8rem]">
-                24,50 €{" "}
-                <span className="text-base font-normal text-white/40 md:text-lg">
-                  + IVA/mes
-                </span>
-              </p>
-
+              <p className="mt-5 text-[1.8rem] font-semibold text-white md:text-[2rem]">
+  24,50 €{" "}
+  <span className="text-sm font-normal text-white/40">
+    + IVA/mes
+  </span>
+</p>
               <p className="mt-4 max-w-lg text-[13px] leading-[1.75] text-white/48 md:text-sm">
                 Una cuota mensual pensada para mantener la solución activa,
                 actualizada y preparada para seguir recibiendo citas.
