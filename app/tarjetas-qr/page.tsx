@@ -38,28 +38,28 @@ const included = [
 
 const steps = [
   {
-    number: "01",
+    number: "1",
     icon: QrCode,
     title: "Escanea el QR",
     description:
       "Tu cliente escanea el código con la cámara de su móvil.",
   },
   {
-    number: "02",
+    number: "2",
     icon: Smartphone,
     title: "Accede a la página",
     description:
       "Entra en una página personalizada para tu negocio.",
   },
   {
-    number: "03",
+    number: "3",
     icon: CalendarCheck,
     title: "Elige día y hora",
     description:
       "Consulta la disponibilidad y selecciona la cita.",
   },
   {
-    number: "04",
+    number: "4",
     icon: Check,
     title: "Cita confirmada",
     description:
@@ -77,12 +77,12 @@ const businesses = [
     title: "Centros de estética",
   },
   {
-    icon: Scissors,
-    title: "Peluquerías",
-  },
-  {
     icon: HeartPulse,
     title: "Fisioterapia y bienestar",
+  },
+  {
+    icon: Scissors,
+    title: "Peluquerías",
   },
   {
     icon: BriefcaseBusiness,
@@ -156,7 +156,7 @@ export default function TarjetasQrPage() {
               Servicio especial
             </span>
 
-            <h1 className="max-w-lg text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-[2.45rem] md:text-[2.8rem] lg:text-[3.05rem]">
+            <h1 className="max-w-md text-[2rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-[2.2rem] md:text-[2.4rem] lg:text-[2.65rem]">
               Tu tarjeta de visita, conectada a tu agenda
             </h1>
 
