@@ -76,6 +76,7 @@ export default function Home() {
   const [showTransition, setShowTransition] = useState(false)
   const [showMainContent, setShowMainContent] = useState(false)
   const [showBookingModal, setShowBookingModal] = useState(false)
+  const [bookingContext, setBookingContext] = useState<"general" | "tarjetas-qr">("general")
   const [bookingStep, setBookingStep] = useState<"form" | "calendar" | "success">("form")
   const [currentMonth, setCurrentMonth] = useState(() => new Date())
   const [selectedDay, setSelectedDay] = useState("")
@@ -92,6 +93,7 @@ export default function Home() {
     telefono: "",
     negocio: "",
     automatizar: "",
+    observaciones: "",
   })
 
   const calendarDays = getCalendarDays(currentMonth)
@@ -110,6 +112,7 @@ export default function Home() {
       telefono: "",
       negocio: "",
       automatizar: "",
+      observaciones: "",
     })
   }, [])
 
@@ -123,13 +126,16 @@ export default function Home() {
   }, [])
 
   const handleOpenBooking = useCallback(() => {
+    setBookingContext("general")
     setShowBookingModal(true)
   }, [])
   
   useEffect(() => {
   const params = new URLSearchParams(window.location.search)
+  const booking = params.get("booking")
 
-  if (params.get("booking") === "1") {
+  if (booking === "1" || booking === "qr") {
+    setBookingContext(booking === "qr" ? "tarjetas-qr" : "general")
     setShowMainContent(true)
     setShowBookingModal(true)
 
@@ -153,7 +159,23 @@ export default function Home() {
   }, [resetBooking])
 
   const handleChooseDate = () => {
-    const allFieldsCompleted = Object.values(bookingForm).every(
+    const requiredFields =
+      bookingContext === "tarjetas-qr"
+        ? [
+            bookingForm.nombre,
+            bookingForm.email,
+            bookingForm.telefono,
+            bookingForm.negocio,
+          ]
+        : [
+            bookingForm.nombre,
+            bookingForm.email,
+            bookingForm.telefono,
+            bookingForm.negocio,
+            bookingForm.automatizar,
+          ]
+
+    const allFieldsCompleted = requiredFields.every(
       (value) => value.trim() !== ""
     )
 
@@ -181,7 +203,14 @@ const handleConfirmMeeting = async () => {
           email: bookingForm.email,
           telefono: bookingForm.telefono,
           negocio: bookingForm.negocio,
-          automatizar: bookingForm.automatizar,
+          automatizar:
+            bookingContext === "tarjetas-qr"
+              ? "Solicitud información tarjetas QR"
+              : bookingForm.automatizar,
+          observaciones:
+            bookingContext === "tarjetas-qr"
+              ? bookingForm.observaciones.trim()
+              : "",
           fecha: selectedDateKey,
           hora: selectedHour,
         }),
@@ -305,16 +334,24 @@ const fetchAvailableHours = async (dateKey: string) => {
             {bookingStep !== "success" && (
             <div className="mb-6 text-center">
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-[#00dcff]">
-                {bookingStep === "form" ? "Agenda tu cita" : "Elige fecha y hora"}
+                {bookingStep === "form"
+                  ? bookingContext === "tarjetas-qr"
+                    ? "Tarjetas de visita con QR"
+                    : "Agenda tu cita"
+                  : "Elige fecha y hora"}
               </p>
 
               <h2 className="text-2xl font-semibold text-white">
-                Conoce a Martina Assistant
+                {bookingContext === "tarjetas-qr"
+                  ? "Agenda una reunión"
+                  : "Conoce a Martina Assistant"}
               </h2>
 
               <p className="mt-3 text-xs text-white/60">
                 {bookingStep === "form"
-                  ? "Cuéntame un poco sobre tu negocio y después elegiremos fecha y hora."
+                  ? bookingContext === "tarjetas-qr"
+                    ? "Déjame tus datos y elige una fecha para conocer cómo podemos adaptar el servicio a tu negocio."
+                    : "Cuéntame un poco sobre tu negocio y después elegiremos fecha y hora."
                   : "Selecciona un día disponible y elige la hora que mejor te venga."}
               </p>
             </div>
@@ -354,13 +391,23 @@ const fetchAvailableHours = async (dateKey: string) => {
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
-                <textarea
-                  placeholder="¿Qué te gustaría automatizar?"
-                  rows={3}
-                  value={bookingForm.automatizar}
-                  onChange={(e) => updateBookingForm("automatizar", e.target.value)}
-                  className="w-full resize-none rounded-2xl border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
-                />
+                {bookingContext === "tarjetas-qr" ? (
+                  <textarea
+                    placeholder="Observaciones o cualquier información que quieras añadir (opcional)"
+                    rows={3}
+                    value={bookingForm.observaciones}
+                    onChange={(e) => updateBookingForm("observaciones", e.target.value)}
+                    className="w-full resize-none rounded-2xl border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
+                  />
+                ) : (
+                  <textarea
+                    placeholder="¿Qué te gustaría automatizar?"
+                    rows={3}
+                    value={bookingForm.automatizar}
+                    onChange={(e) => updateBookingForm("automatizar", e.target.value)}
+                    className="w-full resize-none rounded-2xl border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
+                  />
+                )}
 
                 {formError && (
                   <div className="rounded-2xl border border-[#00dcff]/25 bg-[#00dcff]/10 px-4 py-3 text-sm text-white/80">
@@ -377,7 +424,7 @@ const fetchAvailableHours = async (dateKey: string) => {
                       '0 0 40px rgba(0,220,255,0.45), inset 0 0 0 1px rgba(0,220,255,0.15)',
                   }}
                 >
-                  Elegir fecha
+                  {bookingContext === "tarjetas-qr" ? "Agendar reunión" : "Elegir fecha"}
                 </button>
               </form>
             )}
@@ -544,7 +591,9 @@ const fetchAvailableHours = async (dateKey: string) => {
 
     <div className="space-y-3 text-sm text-white/70">
       <p>
-        En nuestra sesión descubrirás cómo Martina Assistant puede ayudarte a gestionar conversaciones, citas, recordatorios y tareas del día a día para que puedas dedicar más tiempo a lo que realmente importa: tu negocio 💡
+        {bookingContext === "tarjetas-qr"
+          ? "En nuestra reunión veremos cómo adaptar el diseño de las tarjetas, el código QR y la página de reserva a la imagen y necesidades de tu negocio."
+          : "En nuestra sesión descubrirás cómo Martina Assistant puede ayudarte a gestionar conversaciones, citas, recordatorios y tareas del día a día para que puedas dedicar más tiempo a lo que realmente importa: tu negocio 💡"}
       </p>
 
       <p>
