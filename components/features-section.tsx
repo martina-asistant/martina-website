@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { 
   MessageCircle, 
@@ -208,13 +209,13 @@ export function FeaturesSection() {
                 </div>
               </div>
 
-              <button
-  type="button"
+              <Link
+  href="/tarjetas-qr"
   className="shrink-0 flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all duration-300 md:self-center md:mr-22"
 >
   <span>Descubrir</span>
   <ArrowRight className="w-4 h-4" />
-</button>
+</Link>
             </div>
 
             <div 
