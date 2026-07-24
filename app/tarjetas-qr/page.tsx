@@ -156,11 +156,11 @@ export default function TarjetasQrPage() {
               Servicio especial
             </span>
 
-            <h1 className="max-w-xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="max-w-lg text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-[2.45rem] md:text-[2.8rem] lg:text-[3.05rem]">
               Tu tarjeta de visita, conectada a tu agenda
             </h1>
 
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
+            <p className="mt-5 max-w-lg text-[13px] leading-[1.75] text-white/50 md:text-sm">
               Diseñamos una tarjeta de visita personalizada con código QR para
               que tus clientes puedan acceder a una página propia, consultar la
               disponibilidad y pedir cita directamente desde el móvil.
@@ -228,11 +228,11 @@ export default function TarjetasQrPage() {
               Una solución completa
             </span>
 
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <h2 className="text-xl font-semibold tracking-tight text-white md:text-[1.65rem]">
               Mucho más que una tarjeta de visita
             </h2>
 
-            <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-white/55 md:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-[13px] leading-[1.8] text-white/50 md:text-sm">
               Tu tarjeta se convierte en una nueva vía de entrada a tu negocio.
               Al escanear el código QR, el cliente accede a una página
               personalizada donde puede consultar la disponibilidad y
@@ -260,14 +260,14 @@ export default function TarjetasQrPage() {
                 Servicio completo
               </span>
 
-              <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              <h2 className="text-[2.35rem] font-semibold tracking-tight text-white md:text-[2.8rem]">
                 299 €{" "}
-                <span className="text-lg font-normal text-white/40 md:text-xl">
+                <span className="text-base font-normal text-white/40 md:text-lg">
                   + IVA
                 </span>
               </h2>
 
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
+              <p className="mt-4 max-w-xl text-[13px] leading-[1.75] text-white/50 md:text-sm">
                 Cada solución se adapta a la imagen y necesidades de cada
                 negocio.
               </p>
@@ -276,7 +276,7 @@ export default function TarjetasQrPage() {
                 {included.map((item) => (
                   <div
                     key={item.title}
-                    className="group flex min-h-[84px] items-center gap-4 rounded-2xl border border-[#00dcff]/15 bg-white/[0.035] px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#00dcff]/40 hover:shadow-[0_0_28px_rgba(0,220,255,0.08)]"
+                    className="group flex min-h-[72px] items-center gap-4 rounded-2xl border border-[#00dcff]/15 bg-white/[0.035] px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#00dcff]/40 hover:shadow-[0_0_28px_rgba(0,220,255,0.08)]"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#00dcff]/25 bg-[#00dcff]/10">
                       <item.icon
@@ -285,7 +285,7 @@ export default function TarjetasQrPage() {
                       />
                     </div>
 
-                    <span className="text-sm font-medium leading-snug text-white/82">
+                    <span className="text-[13px] font-medium leading-snug text-white/78">
                       {item.title}
                     </span>
                   </div>
@@ -364,24 +364,24 @@ export default function TarjetasQrPage() {
                 Mantenimiento
               </span>
 
-              <h2 className="max-w-xl text-2xl font-semibold tracking-tight text-white md:text-3xl">
+              <h2 className="max-w-lg text-xl font-semibold tracking-tight text-white md:text-[1.65rem]">
                 Todo preparado para que siga funcionando
               </h2>
 
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
+              <p className="mt-4 max-w-lg text-[13px] leading-[1.75] text-white/50 md:text-sm">
                 Nos encargamos del mantenimiento técnico para que la página
                 continúe operativa y el sistema siga funcionando correctamente
                 mes a mes.
               </p>
 
-              <p className="mt-6 text-4xl font-semibold text-white md:text-5xl">
+              <p className="mt-6 text-[2.35rem] font-semibold text-white md:text-[2.8rem]">
                 24,50 €{" "}
-                <span className="text-lg font-normal text-white/40 md:text-xl">
+                <span className="text-base font-normal text-white/40 md:text-lg">
                   + IVA/mes
                 </span>
               </p>
 
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
+              <p className="mt-4 max-w-lg text-[13px] leading-[1.75] text-white/48 md:text-sm">
                 Una cuota mensual pensada para mantener la solución activa,
                 actualizada y preparada para seguir recibiendo citas.
               </p>
@@ -412,11 +412,11 @@ export default function TarjetasQrPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <h2 className="text-xl font-semibold tracking-tight text-white md:text-[1.65rem]">
               Así de fácil funciona
             </h2>
 
-            <p className="mt-2 text-sm text-white/48">
+            <p className="mt-2 text-xs leading-[1.65] text-white/45">
               De la tarjeta a tu cita, en solo unos segundos.
             </p>
           </motion.div>
@@ -445,11 +445,11 @@ export default function TarjetasQrPage() {
                   />
                 </div>
 
-                <h3 className="text-sm font-medium text-white">
+                <h3 className="text-[13px] font-medium text-white/90">
                   {step.title}
                 </h3>
 
-                <p className="mt-2 text-sm leading-relaxed text-white/48">
+                <p className="mt-2 text-xs leading-[1.65] text-white/45">
                   {step.description}
                 </p>
               </motion.div>
@@ -472,7 +472,7 @@ export default function TarjetasQrPage() {
               Para negocios con cita previa
             </span>
 
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <h2 className="text-xl font-semibold tracking-tight text-white md:text-[1.65rem]">
               Adaptado a cualquier tipo de negocio
             </h2>
           </motion.div>
@@ -497,7 +497,7 @@ export default function TarjetasQrPage() {
                   />
                 </div>
 
-                <span className="text-sm font-medium text-white/80">
+                <h3 className="text-[13px] font-medium text-white/90">
                   {business.title}
                 </span>
               </motion.div>
@@ -522,11 +522,11 @@ export default function TarjetasQrPage() {
               Da el siguiente paso
             </span>
 
-            <h2 className="mx-auto max-w-3xl text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <h2 className="mx-auto max-w-2xl text-xl font-semibold tracking-tight text-white md:text-[1.7rem]">
               Convierte tu tarjeta de visita en una puerta directa a tu agenda
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/52 md:text-base">
+            <p className="mx-auto mt-4 max-w-xl text-[13px] leading-[1.75] text-white/48 md:text-sm">
               Ofrece a tus clientes una forma rápida, sencilla y profesional de
               pedir cita desde cualquier lugar.
             </p>
