@@ -499,7 +499,7 @@ export default function TarjetasQrPage() {
 
                 <h3 className="text-[13px] font-medium text-white/90">
                   {business.title}
-                </span>
+                </h3>
               </motion.div>
             ))}
           </div>
