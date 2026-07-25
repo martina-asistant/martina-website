@@ -623,7 +623,7 @@ const fetchAvailableHours = async (dateKey: string) => {
       </p>
 
       <h2 className="text-xl font-semibold text-white">
-        ¡Gracias por reservar tu reunión! 😊
+        ¡Gracias por reservar tu reunión!
       </h2>
     </div>
 
@@ -650,7 +650,7 @@ const fetchAvailableHours = async (dateKey: string) => {
     <div className="space-y-3 text-sm text-white/70">
       <p>
         {bookingContext === "tarjetas-qr"
-          ? "En nuestra reunión veremos cómo adaptar el diseño de las tarjetas, el código QR y la página de reserva a la imagen y necesidades de tu negocio."
+          ? "En nuestra reunión veremos cómo personalizar el diseño de las tarjetas, el código QR y la página de reserva al diseño actual de tu negocio."
           : "En nuestra sesión descubrirás cómo Martina Assistant puede ayudarte a gestionar conversaciones, citas, recordatorios y tareas del día a día para que puedas dedicar más tiempo a lo que realmente importa: tu negocio 💡"}
       </p>
 
@@ -662,9 +662,11 @@ const fetchAvailableHours = async (dateKey: string) => {
         💻 Reunión online mediante Google Meet.
       </p>
 
-      <p>
-        Veremos cómo trabaja Martina en situaciones reales y resolveremos cualquier duda que tengas.
-      </p>
+      {bookingContext === "general" && (
+  <p>
+    Veremos cómo trabaja Martina en situaciones reales y resolveremos cualquier duda que tengas.
+  </p>
+)}
 
       <p className="text-[#00dcff] font-medium">
         ¡Nos vemos pronto!✨
