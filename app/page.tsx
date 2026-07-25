@@ -38,6 +38,43 @@ function formatMonthLabel(date: Date) {
   return label.charAt(0).toUpperCase() + label.slice(1)
 }
 
+function formatPersonName(value: string) {
+  const lowerCaseParticles = new Set([
+    "de",
+    "del",
+    "la",
+    "las",
+    "los",
+    "y",
+    "da",
+    "das",
+    "do",
+    "dos",
+    "van",
+    "von",
+  ])
+
+  return value
+    .trim()
+    .toLocaleLowerCase("es-ES")
+    .split(/\s+/)
+    .map((word, index) => {
+      if (index > 0 && lowerCaseParticles.has(word)) {
+        return word
+      }
+
+      return word
+        .split("-")
+        .map(
+          (part) =>
+            part.charAt(0).toLocaleUpperCase("es-ES") +
+            part.slice(1)
+        )
+        .join("-")
+    })
+    .join(" ")
+}
+
 function getCalendarDays(currentMonth: Date) {
   const year = currentMonth.getFullYear()
   const month = currentMonth.getMonth()
@@ -163,12 +200,14 @@ export default function Home() {
       bookingContext === "tarjetas-qr"
         ? [
             bookingForm.nombre,
+            bookingForm.apellidos,
             bookingForm.email,
             bookingForm.telefono,
             bookingForm.negocio,
           ]
         : [
             bookingForm.nombre,
+            bookingForm.apellidos,
             bookingForm.email,
             bookingForm.telefono,
             bookingForm.negocio,
@@ -189,6 +228,9 @@ export default function Home() {
   }
 
 const handleConfirmMeeting = async () => {
+  const nombreFormateado = formatPersonName(bookingForm.nombre)
+  const apellidosFormateados = formatPersonName(bookingForm.apellidos)
+
   try {
     const response = await fetch(
       "https://sheilacg.app.n8n.cloud/webhook/solicitud-demo",
@@ -198,8 +240,8 @@ const handleConfirmMeeting = async () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          nombre: bookingForm.nombre,
-          apellidos: "",
+          nombre: nombreFormateado,
+          apellidos: apellidosFormateados,
           email: bookingForm.email,
           telefono: bookingForm.telefono,
           negocio: bookingForm.negocio,
@@ -361,9 +403,23 @@ const fetchAvailableHours = async (dateKey: string) => {
               <form className="space-y-4">
                 <input
                   type="text"
-                  placeholder="Nombre y apellidos"
+                  placeholder="Nombre"
                   value={bookingForm.nombre}
                   onChange={(e) => updateBookingForm("nombre", e.target.value)}
+                  onBlur={(e) =>
+                    updateBookingForm("nombre", formatPersonName(e.target.value))
+                  }
+                  className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Apellidos"
+                  value={bookingForm.apellidos}
+                  onChange={(e) => updateBookingForm("apellidos", e.target.value)}
+                  onBlur={(e) =>
+                    updateBookingForm("apellidos", formatPersonName(e.target.value))
+                  }
                   className="w-full rounded-full border border-[#00dcff]/20 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-all focus:border-[#00dcff]/60 focus:shadow-[0_0_25px_rgba(0,220,255,0.18)]"
                 />
 
@@ -573,7 +629,9 @@ const fetchAvailableHours = async (dateKey: string) => {
 
     <div className="rounded-2xl border border-[#00dcff]/20 bg-white/5 p-5 text-left text-sm text-white/70">
       <p className="mb-3">
-        <span className="text-[#00dcff]">Nombre:</span> {bookingForm.nombre}
+        <span className="text-[#00dcff]">Nombre:</span>{" "}
+        {formatPersonName(bookingForm.nombre)}{" "}
+        {formatPersonName(bookingForm.apellidos)}
       </p>
 
       <p className="mb-3">
