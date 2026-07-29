@@ -4,23 +4,46 @@ import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter"
-});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
-const geistMono = Geist_Mono({ 
-  subsets: ["latin"],
-  variable: "--font-mono"
-});
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+})
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://martinaassistant.com'),
+
   title: 'Martina Assistant - Automatiza tu negocio',
-  description: 'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
+  description:
+    'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
   generator: 'v0.app',
+
   icons: {
     icon: '/apple-icon.png',
     apple: '/apple-icon.png',
+  },
+
+  openGraph: {
+    title: 'Martina Assistant - Automatiza tu negocio',
+    description:
+      'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+    url: 'https://martinaassistant.com',
+    siteName: 'Martina Assistant',
+    locale: 'es_ES',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Martina Assistant - Automatiza tu negocio',
+    description:
+      'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
   },
 }
 
@@ -35,7 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}
+      >
         {process.env.NODE_ENV === 'production' && (
           <Script
             id="cookieyes"
@@ -50,7 +75,11 @@ export default function RootLayout({
               src="https://www.googletagmanager.com/gtag/js?id=G-8XT7T0MBLB"
               strategy="afterInteractive"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+            >
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -63,7 +92,9 @@ export default function RootLayout({
 
         {children}
 
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && (
+          <Analytics />
+        )}
       </body>
     </html>
   )
