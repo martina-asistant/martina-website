@@ -15,9 +15,12 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://martinaassistant.com'),
+  metadataBase: new URL(
+    'https://www.martinaassistant.com',
+  ),
 
-  title: 'Martina Assistant - Automatiza tu negocio',
+  title:
+    'Martina Assistant - Automatiza tu negocio',
 
   description:
     'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
@@ -30,20 +33,48 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Martina Assistant - Automatiza tu negocio',
+    title:
+      'Martina Assistant - Automatiza tu negocio',
+
     description:
       'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
-    url: 'https://martinaassistant.com',
+
+    url:
+      'https://www.martinaassistant.com',
+
     siteName: 'Martina Assistant',
+
     locale: 'es_ES',
+
     type: 'website',
+
+    images: [
+      {
+        url:
+          'https://www.martinaassistant.com/martina-og.png',
+
+        width: 1200,
+
+        height: 630,
+
+        alt:
+          'Martina Assistant - Automatiza tu negocio',
+      },
+    ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Martina Assistant - Automatiza tu negocio',
+
+    title:
+      'Martina Assistant - Automatiza tu negocio',
+
     description:
       'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
+    images: [
+      'https://www.martinaassistant.com/martina-og.png',
+    ],
   },
 }
 
@@ -57,11 +88,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="bg-background">
+    <html
+      lang="es"
+      className="bg-background"
+    >
       <body
         className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV ===
+          'production' && (
           <Script
             id="cookieyes"
             src="https://cdn-cookieyes.com/client_data/cacc55662f1fa128ae88f74acf5a8e67/script.js"
@@ -69,7 +104,8 @@ export default function RootLayout({
           />
         )}
 
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV ===
+          'production' && (
           <>
             <Script
               src="https://www.googletagmanager.com/gtag/js?id=G-8XT7T0MBLB"
@@ -92,7 +128,8 @@ export default function RootLayout({
 
         {children}
 
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV ===
+          'production' && (
           <Analytics />
         )}
       </body>
