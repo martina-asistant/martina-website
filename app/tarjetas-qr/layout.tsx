@@ -1,33 +1,57 @@
-import type { Metadata } from 'next'
-
 export const metadata: Metadata = {
-  title: 'Tarjetas de visita con QR | Martina Assistant',
+  metadataBase: new URL(
+    'https://www.martinaassistant.com',
+  ),
+
+  title:
+    'Martina Assistant - Automatiza tu negocio',
 
   description:
-    'Tarjetas de visita con QR conectadas a tu agenda para que tus clientes puedan consultar la disponibilidad y reservar desde el móvil.',
+    'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
+  generator: 'v0.app',
+
+  icons: {
+    icon: '/apple-icon.png',
+    apple: '/apple-icon.png',
+  },
 
   openGraph: {
-    title: 'Tarjetas de visita con QR | Martina Assistant',
+    title:
+      'Martina Assistant - Automatiza tu negocio',
+
     description:
-      'Convierte tu tarjeta de visita en una puerta directa a tu agenda. Tus clientes escanean el QR, consultan la disponibilidad y reservan desde el móvil.',
-    url: 'https://martinaassistant.com/tarjetas-qr',
+      'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
+    url:
+      'https://www.martinaassistant.com',
+
     siteName: 'Martina Assistant',
+
     locale: 'es_ES',
+
     type: 'website',
+
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt:
+          'Martina Assistant - Automatiza tu negocio',
+      },
+    ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Tarjetas de visita con QR | Martina Assistant',
-    description:
-      'Tarjetas de visita con QR conectadas a tu agenda para recibir reservas desde el móvil.',
-  },
-}
 
-export default function TarjetasQrLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return children
+    title:
+      'Martina Assistant - Automatiza tu negocio',
+
+    description:
+      'Martina responde mensajes, organiza citas y acompaña a tus clientes mientras tú te centras en lo importante.',
+
+    images: ['/opengraph-image.png'],
+  },
 }
