@@ -206,7 +206,7 @@ export default function BusinessPage() {
   </p>
 
   <p className="text-sm leading-relaxed text-white/60">
-    No te preocupes, nuestro objetivo es optimizar tu negocio. Por ello, puedes personalizar Martina con las funciones reales que se adapten a las necesidades de tu negocio.
+    No te preocupes, nuestro objetivo es adaptarnos a tu forma de trabajar. Por ello, puedes personalizar a Martina con las funciones reales que se adapten a las necesidades de tu negocio.
   </p>
 
   <p className="mt-4 text-sm font-medium text-white/85">
