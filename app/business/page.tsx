@@ -38,6 +38,7 @@ const plans = [
       "PANEL_BASICO",
       "Dashboard de actividad",
       "Gestión de conversaciones",
+      "Agenda integrada sin software adicional",
       "Recordatorios automáticos de citas",
     ],
   },
@@ -198,6 +199,20 @@ export default function BusinessPage() {
               </div>
             ))}
           </div>
+
+                <div className="mt-10 rounded-[1.75rem] border border-[#00dcff]/25 bg-white/[0.045] p-6 shadow-[0_0_34px_rgba(0,220,255,0.08)]">
+        <p className="mb-4 text-center text-sm font-light uppercase tracking-[0.35em] text-[#00dcff]">
+  ¿NO TE ENCAJA NINGÚN PLAN?
+</p>
+
+        <p className="text-sm leading-relaxed text-white/60">
+          No te preocupes, nuestro objetivo es optimizar tu negocio. Por ello, puedes personalizar Martina con las funciones reales que se adapten a las necesidades de tu negocio.
+        </p>
+
+        <p className="mt-4 text-sm font-medium text-[#00dcff]">
+          Agenda una reunión y cuéntanos qué necesitas.
+        </p>
+      </div>
 
           <div className="mt-10 rounded-[1.75rem] border border-[#00dcff]/25 bg-[#00dcff]/[0.045] p-6 text-sm leading-relaxed text-white/60">
             <p className="mb-3">
